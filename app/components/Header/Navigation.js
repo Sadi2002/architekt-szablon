@@ -36,7 +36,7 @@ export default function Navigation() {
       {/* DESKTOP MENU */}
       <ul className="hidden md:flex gap-[30px] items-center xl:gap-[50px]">
         <li>
-          <Link href={"/about"} className="text-[14px] xl:text-[16px]">
+          <Link href={"#"} className="text-[14px] xl:text-[16px]">
             About us
           </Link>
         </li>
@@ -46,12 +46,12 @@ export default function Navigation() {
           </Link>
         </li>
         <li>
-          <Link href={"/blog"} className="text-[14px] xl:text-[16px]">
+          <Link href={"#"} className="text-[14px] xl:text-[16px]">
             Blog
           </Link>
         </li>
         <li>
-          <Link href={"/contact"} className="text-[14px] xl:text-[16px]">
+          <Link href={"#"} className="text-[14px] xl:text-[16px]">
             Contact
           </Link>
         </li>
