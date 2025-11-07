@@ -64,7 +64,7 @@ export default function Projects() {
           <div className="relative aspect-7/8 ">
             <Image
               src={Project4}
-              alt="projekt 4"
+              alt="projekt 5"
               quality={50}
               placeholder="blur"
               className="object-cover"
