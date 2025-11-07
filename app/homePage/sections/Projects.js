@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Project1 from "../../../public/Project1.png";
-import Project2 from "../../../public/Project2.png";
-import Project3 from "../../../public/Project3.png";
-import Project4 from "../../../public/Project4.png";
+import Project1 from "../../../public/project1.png";
+import Project2 from "../../../public/project2.png";
+import Project3 from "../../../public/project3.png";
+import Project4 from "../../../public/project4.png";
 
 export default function Projects() {
   return (
