@@ -63,7 +63,7 @@ export default function Projects() {
         <div className="max-w-[78%]">
           <div className="relative aspect-7/8 ">
             <Image
-              src={Project4}
+              src={Project3}
               alt="projekt 4"
               quality={50}
               placeholder="blur"
