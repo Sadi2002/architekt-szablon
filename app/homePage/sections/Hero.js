@@ -1,10 +1,10 @@
 import Image from "next/image";
 import heroImage from "../../../public/main.png";
-import arrow from "../../../public/arrow.png";
+import Button from "@/app/components/Button";
 
 export default function Hero() {
   return (
-    <section className="h-screen absolute top-0 left-0 w-full">
+    <section className="h-[100dvh] absolute top-0 left-0 w-full">
       <div>
         <div className="absolute top-0 left-0 w-full h-screen bg-[rgba(0,0,0,0.55)] -z-1"></div>
         <Image
@@ -16,24 +16,17 @@ export default function Hero() {
           className="object-cover -z-10 absolute"
         />
       </div>
-      <div className="mx-mobile flex flex-col h-full justify-center items-center pt-[200px]">
-        <div>
-          <h1 className="text-white text-4xl font-medium mb-2.5">
+      <div className="mx-mobile flex flex-col h-full relative">
+        <div className="absolute bottom-20">
+          <h1 className="text-white text-[clamp(2.2rem,10vw,5rem)] leading-[clamp(2.2rem,10vw,5rem)] font-medium mb-2.5 ">
             OSIEDLE ZACISZE W Warszawie
           </h1>
           <p className="text-white text-[12px] font-light leading-[18px] mb-[50px]">
             Oferujemy doświadczenie wyrafinowanego komfortu, ponadczasowej
             elegancji szczerej gościnności. Położona w romantycznym
           </p>
+          <Button>Read more</Button>
         </div>
-        <button className="bg-white rounded-[500px] px-3.5 py-1.5 text-[10px] ml-auto mr-0 font-medium flex items-center">
-          Read more{" "}
-          <Image
-            src={arrow}
-            alt="strzałka"
-            className="w-[14px] h-[14px] relative top-[1px]"
-          />
-        </button>
       </div>
       <span className="absolute bottom-[20px] left-0 mx-mobile font-normal text-[#C6C6C6] text-[10px]">
         (scroll down)
