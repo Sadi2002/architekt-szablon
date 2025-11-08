@@ -41,6 +41,21 @@
   --font-weight-bold-font-weight: 700;
 
   /* =========================================================
+    KOMPONENTY GLOBALNE
+  ========================================================== */
+
+  /* PRZYCISK ZE STRZAŁKA */
+  --radius-buttonWithArrow-rounded: 500px;
+  --spacing-buttonWithArrow-padding-x: clamp(1rem, 3.35vw, 1.5rem);
+  --spacing-buttonWithArrow-padding-y: clamp(0.5rem, 3.35vw, 0.7rem);
+  --text-buttonWithArrow-text: clamp(0.75rem, 3.35vw, 1rem);
+  --spacing-buttonWithArrow-margin-left-mobile: auto;
+  --spacing-buttonWithArrow-margin-right-mobile: 0;
+  --spacing-buttonWithArrow-margin-left-tablet: 0;
+  --width-buttonWithArrow-icon-width: clamp(1.5rem, 3.35vw, 1.7rem);
+  --height-buttonWithArrow-icon-height: clamp(1.5rem, 3.35vw, 1.7rem);
+
+  /* =========================================================
     NAWIGACJA
   ========================================================== */
 
@@ -84,4 +99,13 @@
   --spacing-hero-text-max-width-mobile: 300px;
   --spacing-hero-text-max-width-small-laptop: 450px;
   --spacing-hero-text-max-width-laptop: 740px;
+  --spacing-hero-scrollDown-position-bottom-mobile: 20px;
+  --spacing-hero-scrollDown-position-left-mobile: 0px;
+  --spacing-hero-scrollDown-position-bottom-tablet: 50px;
+  --spacing-hero-scrollDown-position-left-tablet: auto;
+  --spacing-hero-scrollDown-position-right-tablet: 0;
+  --color-hero-scrollDown-color: #c6c6c6;
+  --text-hero-scrollDown-size-mobile: 10px;
+  --text-hero-scrollDown-size-tablet: 14px;
+  --opacity-hero-scrollDown-opacity: 64%;
 }

@@ -3,12 +3,12 @@ import arrow from "../../public/arrow.png";
 
 export default function Button({ children }) {
   return (
-    <button className="bg-main-white rounded-[500px] py-1.5 px-[clamp(1rem,3.35vw,1.5rem)] py-[clamp(0.5rem,3.35vw,0.7rem)]  text-[clamp(0.75rem,3.35vw,1rem)] ml-auto mr-0 font-medium flex items-center md:ml-0 ">
+    <button className="bg-main-white rounded-buttonWithArrow-rounded px-buttonWithArrow-padding-x py-buttonWithArrow-padding-y  text-buttonWithArrow-text ml-buttonWithArrow-margin-left-mobile mr-buttonWithArrow-margin-right-mobile font-medium flex items-center md:ml-buttonWithArrow-margin-left-tablet ">
       {children}
       <Image
         src={arrow}
         alt="strzałka"
-        className="w-[clamp(1.5rem,3.35vw,1.7rem)] h-[clamp(1.5rem,3.35vw,1.7rem)] relative"
+        className="w-buttonWithArrow-icon-width h-buttonWithArrow-icon-height relative"
       />
     </button>
   );

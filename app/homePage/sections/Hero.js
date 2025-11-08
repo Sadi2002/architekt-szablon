@@ -34,7 +34,7 @@ export default function Hero() {
           <ButtonWithArrow>Czytaj więcej</ButtonWithArrow>
         </div>
       </div>
-      <span className="absolute bottom-[20px] left-0 mx-margin-mobile font-normal-font-weight text-[#C6C6C6] text-[10px] md:mx-tablet md:bottom-[50px] md:left-auto md:right-0 md:text-[14px] opacity-[64%] 2xl:mx-desktop">
+      <span className="absolute bottom-hero-scrollDown-position-bottom-mobile left-hero-scrollDown-position-left-mobile mx-margin-mobile font-normal-font-weight text-hero-scrollDown-color text-hero-scrollDown-size-mobile md:mx-tablet md:bottom-hero-scrollDown-position-bottom-tablet md:left-hero-scrollDown-position-left-tablet md:right-hero-scrollDown-position-right-tablet md:text-hero-scrollDown-size-tablet opacity-hero-scrollDown-opacity 2xl:mx-desktop">
         (scroll down)
       </span>
     </section>
