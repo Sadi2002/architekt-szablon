@@ -1,6 +1,7 @@
 import Image from "next/image";
 import heroImage from "../../../public/main.png";
 import ButtonWithArrow from "@/app/components/ButtonWithArrow";
+import ArrowBlack from "../../../public/arrow.png";
 import Overlay from "@/app/components/Overlay";
 
 export default function Hero() {
@@ -17,7 +18,7 @@ export default function Hero() {
           className="object-cover -z-10 absolute"
         />
       </div>
-      <div className="mx-margin-mobile flex flex-col h-full-height relative md:mx-tablet 2xl:mx-desktop">
+      <div className="mx-margin-mobile flex flex-col h-full-height relative md:mx-tablet lg:mx-small-laptop 2xl:mx-desktop">
         <div className="absolute bottom-hero-text-position-mobile w-full-width xl:bottom-hero-text-position-desktop">
           <h1 className="text-main-white text-hero-title-size-mobile leading-hero-title-line-height-mobile font-medium-font-weight mb-hero-title-margin-bottom lg:text-hero-title-size-small-laptop lg:leading-hero-title-line-height-small-laptop xl:text-hero-title-size-laptop xl:font-normal-font-weight xl:leading-hero-title-line-height-laptop uppercase 2xl:leading-hero-title-line-height-desktop 2xl:text-hero-title-size-desktop max-w-hero-title-max-width-mobile lg:max-w-hero-title-max-width-small-laptop xl:max-w-hero-title-max-width-laptop 2xl:max-w-hero-title-max-width-desktop ">
             OSIEDLE ZACISZE W Warszawie
@@ -31,7 +32,13 @@ export default function Hero() {
             elegancji i szczerej gościnności. Położona w romantycznym sercu
             Paryża.
           </p>
-          <ButtonWithArrow>Czytaj więcej</ButtonWithArrow>
+          <ButtonWithArrow
+            bg="main-white"
+            color="main-black"
+            source={ArrowBlack}
+          >
+            Czytaj więcej
+          </ButtonWithArrow>
         </div>
       </div>
       <span className="absolute bottom-hero-scrollDown-position-bottom-mobile left-hero-scrollDown-position-left-mobile mx-margin-mobile font-normal-font-weight text-hero-scrollDown-color text-hero-scrollDown-size-mobile md:mx-tablet md:bottom-hero-scrollDown-position-bottom-tablet md:left-hero-scrollDown-position-left-tablet md:right-hero-scrollDown-position-right-tablet md:text-hero-scrollDown-size-tablet opacity-hero-scrollDown-opacity 2xl:mx-desktop">

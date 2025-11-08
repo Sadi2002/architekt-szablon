@@ -3,15 +3,17 @@ import Project1 from "../../../public/project1.png";
 import Project2 from "../../../public/project2.png";
 import Project3 from "../../../public/project3.png";
 import Project4 from "../../../public/project4.png";
+import ArrowWhite from "../../../public/arrow-right-white.png";
+import ButtonWithArrow from "@/app/components/ButtonWithArrow";
 
 export default function Projects() {
   return (
-    <section className="mx-margin-mobile md:mx-tablet">
-      <h3 className="text-[36px] font-medium uppercase relative after:content-['(04)'] after:absolute after:top-[0px] after:text-[8px] mb-5">
+    <section className="mx-margin-mobile md:mx-tablet lg:mx-small-laptop">
+      <h3 className="text-[clamp(36px,6.5vw,45px)] font-medium uppercase relative after:content-['(04)'] after:absolute after:top-[5px] after:text-[8px] mb-5">
         Our projects
       </h3>
-      <div className="flex flex-col gap-[68px]  ">
-        <div className="max-w-[80%]">
+      <div className="flex flex-col   ">
+        <div className="max-w-[80%] mb-[50px]">
           <div className="relative aspect-8/7 ">
             <Image
               src={Project1}
@@ -28,7 +30,7 @@ export default function Projects() {
           </div>
         </div>
 
-        <div className="w-[86%] flex flex-col items-end self-end">
+        <div className="w-[86%] flex flex-col items-end self-end mb-[50px]">
           <div className="flex flex-col justify-end w-full-width relative aspect-5/3">
             <Image
               src={Project2}
@@ -44,7 +46,7 @@ export default function Projects() {
             <span>View project</span>
           </div>
         </div>
-        <div className="w-full-width">
+        <div className="w-full-width mb-[50px]">
           <div className="relative aspect-6/5">
             <Image
               src={Project3}
@@ -60,7 +62,7 @@ export default function Projects() {
             <span>View project</span>
           </div>
         </div>
-        <div className="max-w-[78%]">
+        <div className="max-w-[78%] mb-[30px]">
           <div className="relative aspect-7/8 ">
             <Image
               src={Project4}
@@ -76,13 +78,20 @@ export default function Projects() {
             <span>View project</span>
           </div>
         </div>
+        <div className="leading-[26px] flex flex-col gap-[40px] items-end">
+          <p className="self-start text-[clamp(20px,6.5vw,30px)] leading-[clamp(26px,7.5vw,2.7rem)] max-w-[450px] min-[900px]:max-w-[750px] ">
+            Oferujemy doświadczenie wyrafinowanego komfortu, ponadczasowej
+            elegancji i szczerej gościnności. Położona w romantycznym sercu.
+          </p>
+          <ButtonWithArrow
+            bg="main-black"
+            color="main-white"
+            source={ArrowWhite}
+          >
+            Zobacz wszystkie
+          </ButtonWithArrow>
+        </div>
       </div>
-      {/* <div >
-        <p>
-          Oferujemy doświadczenie wyrafinowanego komfortu, ponadczasowej
-          elegancji i szczerej gościnności. Położona w romantycznym sercu.
-        </p>
-      </div> */}
     </section>
   );
 }
