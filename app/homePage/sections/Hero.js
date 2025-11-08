@@ -1,12 +1,13 @@
 import Image from "next/image";
 import heroImage from "../../../public/main.png";
-import Button from "@/app/components/Button";
+import ButtonWithArrow from "@/app/components/ButtonWithArrow";
+import Overlay from "@/app/components/Overlay";
 
 export default function Hero() {
   return (
-    <section className="h-hero-height relative top-0 left-0 w-full">
+    <section className="h-hero-height relative top-0 left-0 w-full-width">
       <div>
-        <div className="absolute top-0 left-0 w-full h-hero-height bg-[rgba(0,0,0,0.55)] -z-1"></div>
+        <Overlay />
         <Image
           src={heroImage}
           fill
@@ -16,24 +17,24 @@ export default function Hero() {
           className="object-cover -z-10 absolute"
         />
       </div>
-      <div className="mx-margin-mobile flex flex-col h-full relative md:mx-tablet 2xl:mx-desktop">
-        <div className="absolute bottom-30  w-full">
-          <h1 className="text-white text-[clamp(2rem,10vw,3rem)] leading-[clamp(2.2rem,10vw,3rem)] font-medium mb-2.5 lg:text-[70px] lg:leading-[70px] xl:text-[100px] xl:font-normal xl:leading-[100px] uppercase 2xl:leading-[120px] 2xl:text-[120px] max-w-[400px] lg:max-w-[600px] xl:max-w-[800px] 2xl:max-w-[1000px] ">
+      <div className="mx-margin-mobile flex flex-col h-full-height relative md:mx-tablet 2xl:mx-desktop">
+        <div className="absolute bottom-hero-text-position-mobile w-full-width xl:bottom-hero-text-position-desktop">
+          <h1 className="text-main-white text-hero-title-size-mobile leading-hero-title-line-height-mobile font-medium-font-weight mb-hero-title-margin-bottom lg:text-hero-title-size-small-laptop lg:leading-hero-title-line-height-small-laptop xl:text-hero-title-size-laptop xl:font-normal-font-weight xl:leading-hero-title-line-height-laptop uppercase 2xl:leading-hero-title-line-height-desktop 2xl:text-hero-title-size-desktop max-w-hero-title-max-width-mobile lg:max-w-hero-title-max-width-small-laptop xl:max-w-hero-title-max-width-laptop 2xl:max-w-hero-title-max-width-desktop ">
             OSIEDLE ZACISZE W Warszawie
           </h1>
           <p
-            className="text-white font-light  mb-[50px] text-[clamp(0.75rem,3.35vw,1rem)]
-          leading-[clamp(0.75rem,10vw, 1.5rem)] max-w-[300px] lg:max-w-[450px] mobile-text:max-w-[360px] xl:max-w-[740px] xl:mb-[70px]  
+            className="text-main-white font-light-font-weight mb-hero-text-margin-bottom-mobile text-hero-text-size-mobile
+          leading-hero-text-line-height-mobile max-w-hero-text-max-width-mobile lg:max-w-hero-text-max-width-small-laptop min-[420px]:max-w-[360px] xl:max-w-hero-text-max-width-laptop xl:mb-hero-text-margin-bottom-laptop
           "
           >
             Oferujemy doświadczenie wyrafinowanego komfortu, ponadczasowej
             elegancji i szczerej gościnności. Położona w romantycznym sercu
             Paryża.
           </p>
-          <Button>Czytaj więcej</Button>
+          <ButtonWithArrow>Czytaj więcej</ButtonWithArrow>
         </div>
       </div>
-      <span className="absolute bottom-[20px] left-0 mx-margin-mobile font-normal text-[#C6C6C6] text-[10px] md:mx-tablet md:bottom-[50px] md:left-auto md:right-0 md:text-[14px] opacity-[64%] 2xl:mx-desktop">
+      <span className="absolute bottom-[20px] left-0 mx-margin-mobile font-normal-font-weight text-[#C6C6C6] text-[10px] md:mx-tablet md:bottom-[50px] md:left-auto md:right-0 md:text-[14px] opacity-[64%] 2xl:mx-desktop">
         (scroll down)
       </span>
     </section>

@@ -11,7 +11,7 @@ export default function Navigation() {
   return (
     <nav
       className={`flex items-center justify-between mx-margin-mobile pt-mobile-navigation-top md:mx-tablet 2xl:mx-desktop xl:pt-desktop-navigation-top ${
-        isHome ? "text-white" : "text-black"
+        isHome ? "text-main-white" : "text-main-black"
       }`}
     >
       {/* LOGO PO LEWEJ */}
@@ -22,13 +22,13 @@ export default function Navigation() {
       {/* MOBILE BURGER */}
       <div className="md:hidden flex flex-col gap-burger-line-gap items-end">
         <span
-          className={`h-burger-line-height w-[17px] bg-black ${
-            isHome ? "bg-white" : "bg-black"
+          className={`h-burger-line-height w-[17px] bg-main-black ${
+            isHome ? "bg-main-white" : "bg-black"
           }`}
         ></span>
         <span
-          className={`h-burger-line-height w-[24px] bg-black ${
-            isHome ? "bg-white" : "bg-black"
+          className={`h-burger-line-height w-[24px] bg-main-black ${
+            isHome ? "bg-main-white" : "bg-main-black"
           }`}
         ></span>
       </div>
@@ -36,22 +36,34 @@ export default function Navigation() {
       {/* DESKTOP MENU */}
       <ul className="hidden md:flex gap-between-navigation-links items-center xl:gap-between-navigation-links-xl">
         <li>
-          <Link href={"#"} className="text-[14px] xl:text-[16px]">
+          <Link
+            href={"#"}
+            className="text-links-size-navigation-mobile xl:text-links-size-navigation-desktop"
+          >
             About us
           </Link>
         </li>
         <li>
-          <Link href={"/portfolio"} className="text-[14px] xl:text-[16px]">
+          <Link
+            href={"/portfolio"}
+            className="text-links-size-navigation-mobile xl:text-links-size-navigation-desktop"
+          >
             Portfolio
           </Link>
         </li>
         <li>
-          <Link href={"#"} className="text-[14px] xl:text-[16px]">
+          <Link
+            href={"#"}
+            className="text-links-size-navigation-mobile xl:text-links-size-navigation-desktop"
+          >
             Blog
           </Link>
         </li>
         <li>
-          <Link href={"#"} className="text-[14px] xl:text-[16px]">
+          <Link
+            href={"#"}
+            className="text-links-size-navigation-mobile xl:text-links-size-navigation-desktop"
+          >
             Contact
           </Link>
         </li>

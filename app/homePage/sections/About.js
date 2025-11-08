@@ -1,5 +1,6 @@
 import Image from "next/image";
 import AboutImage from "../../../public/about.png";
+import ButtonWithoutArrow from "@/app/components/ButtonWithoutArrow";
 
 export default function About() {
   return (
@@ -11,22 +12,20 @@ export default function About() {
         <div className="flex flex-col items-end lg:items-start lg:w-[50%]">
           <div
             className="flex flex-col gap-4 font-light mb-10 items-start text-[clamp(12px,3.35vw,1rem)]
-          leading-[clamp(0.75rem,10vw, 1.5rem)] w-full"
+          leading-[clamp(0.75rem,10vw, 1.5rem)] w-full-width"
           >
-            <p className=" lg:max-w-[700px] 2xl:max-w-full">
+            <p className=" lg:max-w-[700px] 2xl:max-w-full-width">
               Projektując przestrzeń, poszukuję harmonii między światłem a
               materią. Perfekcja detalu prowadzi do ponadczasowej formy, która
               inspiruje użytkowników.
             </p>
-            <p className="  lg:max-w-[700px] 2xl:max-w-full">
+            <p className="  lg:max-w-[700px] 2xl:max-w-full-width">
               Przestrzeń powinna oddychać światłem i funkcją. Projektując,
               poszukuję relacji między naturą a strukturą. Perspektywa
               użytkownika prowadzi każdy detal, czyniąc architekturę.
             </p>
           </div>
-          <button className="font-semibold text-[clamp(0.75rem,3.5vw,1rem)] relative uppercase after:content-[''] after:bg-black after:absolute after:bottom-[-0.5px] after:left-0 after:w-full after:h-[1px] ">
-            Więcej o nas
-          </button>
+          <ButtonWithoutArrow>Więcej o nas</ButtonWithoutArrow>
         </div>
       </div>
       <div className="relative max-w-[90%] xl:w-[80%] aspect-[3/1.7]">

@@ -294,7 +294,7 @@ export default function Portfolio() {
         </div>
       </div>
 
-      <div className="flex flex-col w-full xl:w-[60%] gap-[50px] xl:gap-[100px]">
+      <div className="flex flex-col w-full-width xl:w-[60%] gap-[50px] xl:gap-[100px]">
         {projects.map((p, i) => (
           <div
             key={i}
@@ -313,7 +313,11 @@ export default function Portfolio() {
                     willChange: "transform",
                   }}
                 >
-                  <Image src={p.image} alt={p.title} className="w-full block" />
+                  <Image
+                    src={p.image}
+                    alt={p.title}
+                    className="w-full-width block"
+                  />
                 </div>
               </div>
               <div className="flex justify-between mt-[5px] xl:mt-[7px] 2xl:mt-[10px] items-center">

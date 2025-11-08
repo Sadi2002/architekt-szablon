@@ -22,14 +22,14 @@ export default function Projects() {
               fill
             />
           </div>
-          <div className="flex justify-between mt-[5px]  w-full text-[clamp(12px,3.35vw,1rem)]">
+          <div className="flex justify-between mt-[5px]  w-full-width text-[clamp(12px,3.35vw,1rem)]">
             <span>Our project</span>
             <span>View project</span>
           </div>
         </div>
 
         <div className="w-[86%] flex flex-col items-end self-end">
-          <div className="flex flex-col justify-end w-full relative aspect-5/3">
+          <div className="flex flex-col justify-end w-full-width relative aspect-5/3">
             <Image
               src={Project2}
               alt="projekt 2"
@@ -39,12 +39,12 @@ export default function Projects() {
               fill
             />
           </div>
-          <div className="flex justify-between mt-[5px] w-full text-[clamp(12px,3.35vw,1rem)]">
+          <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
             <span>Our project</span>
             <span>View project</span>
           </div>
         </div>
-        <div className="w-full">
+        <div className="w-full-width">
           <div className="relative aspect-6/5">
             <Image
               src={Project3}
@@ -55,7 +55,7 @@ export default function Projects() {
               fill
             />
           </div>
-          <div className="flex justify-between mt-[5px]  w-full text-[clamp(12px,3.35vw,1rem)]">
+          <div className="flex justify-between mt-[5px]  w-full-width text-[clamp(12px,3.35vw,1rem)]">
             <span>Our project</span>
             <span>View project</span>
           </div>
@@ -71,7 +71,7 @@ export default function Projects() {
               fill
             />
           </div>
-          <div className="flex justify-between mt-[5px] w-full text-[clamp(12px,3.35vw,1rem)]">
+          <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
             <span>Our project</span>
             <span>View project</span>
           </div>
