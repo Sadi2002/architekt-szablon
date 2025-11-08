@@ -4,22 +4,22 @@ import ButtonWithoutArrow from "@/app/components/ButtonWithoutArrow";
 
 export default function About() {
   return (
-    <section className="pt-[80px] flex flex-col gap-10 xl:gap-20 xl:pt-[150px] 2xl:gap-[100px] mb-[80px]">
-      <div className=" mx-margin-mobile lg:flex lg:mx-tablet lg:justify-between xl:justify-between 2xl:mx-desktop">
-        <h2 className="text-[clamp(1.6rem,7.5vw,2.5rem)] leading-[clamp(2.1rem,7.5vw,2.5rem)] font-medium mb-[30px] max- md:max-w-[500px] max-w-[500px] lg:text-[30px] lg:text-[clamp(2rem,3.5vw,64px)] lg:leading-[clamp(2rem,3.5vw,64px)] lg:max-w-[700px]  lg:w-[50%] 2xl:max-w-[850px]  2xl:font-normal">
+    <section className="pt-about-section-padding-top-mobile flex flex-col gap-about-section-gap-mobile xl:gap-about-section-gap-laptop xl:pt-about-section-padding-top-laptop 2xl:gap-about-section-gap-desktop mb-about-section-margin-bottom">
+      <div className=" mx-margin-mobile lg:flex md:mx-tablet lg:justify-between xl:justify-between 2xl:mx-desktop">
+        <h2 className="text-about-title-size-mobile leading-about-title-line-height-mobile font-medium mb-about-title-margin-bottom max-w-about-title-max-width-mobile lg:text-about-title-size-laptop lg:leading-about-title-line-height-laptop lg:max-w-about-title-max-width-laptop lg:w-about-title-width-laptop 2xl:max-w-about-title-max-width-desktop  2xl:font-normal">
           Witamy w Visual Studio Twoje eleganckie
         </h2>
-        <div className="flex flex-col items-end lg:items-start lg:w-[50%]">
+        <div className="flex flex-col items-end lg:items-start lg:w-about-text-width-laptop">
           <div
-            className="flex flex-col gap-4 font-light mb-10 items-start text-[clamp(12px,3.35vw,1rem)]
+            className="flex flex-col gap-about-text-box-gap font-light-font-weight mb-about-text-box-margin-bottom items-start text-about-text-box-size
           leading-[clamp(0.75rem,10vw, 1.5rem)] w-full-width"
           >
-            <p className=" lg:max-w-[700px] 2xl:max-w-full-width">
+            <p className=" lg:max-w-about-text-max-width-small-laptop 2xl:max-w-full-width">
               Projektując przestrzeń, poszukuję harmonii między światłem a
               materią. Perfekcja detalu prowadzi do ponadczasowej formy, która
               inspiruje użytkowników.
             </p>
-            <p className="  lg:max-w-[700px] 2xl:max-w-full-width">
+            <p className="  lg:max-w-about-text-max-width-small-laptop 2xl:max-w-full-width">
               Przestrzeń powinna oddychać światłem i funkcją. Projektując,
               poszukuję relacji między naturą a strukturą. Perspektywa
               użytkownika prowadzi każdy detal, czyniąc architekturę.
@@ -28,7 +28,7 @@ export default function About() {
           <ButtonWithoutArrow>Więcej o nas</ButtonWithoutArrow>
         </div>
       </div>
-      <div className="relative max-w-[90%] xl:w-[80%] aspect-[3/1.7]">
+      <div className="relative max-w-about-image-max-width-mobile xl:w-about-image-width-laptop aspect-about-image-aspect-ratio">
         <Image
           src={AboutImage}
           alt="pokój"
