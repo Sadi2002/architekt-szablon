@@ -1,18 +1,22 @@
-import About from "./homePage/sections/About";
 import Hero from "./homePage/sections/Hero";
-import Projects from "./homePage/sections/Projects";
+
+import dynamic from "next/dynamic";
+
+const DynamicAbout = dynamic(() => import("./homePage/sections/About"));
+const DynamicProjects = dynamic(() => import("./homePage/sections/Projects"));
 
 export const metadata = {
-  title: "Sadowski Studio",
-  description: "Strona portfolio Sadowski Studio",
+  title: "Sadowski Studio - Nowoczesna Architektura i Design",
+  description:
+    "Odkryj Sadowski Studio - Twoje źródło nowoczesnej architektury i designu. Tworzymy przestrzenie, które inspirują i zachwycają.",
 };
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <About />
-      <Projects />
+      <DynamicAbout />
+      <DynamicProjects />
     </>
   );
 }
