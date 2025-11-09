@@ -1,12 +1,5 @@
-"use client";
 import Image from "next/image";
 import AboutImage from "../../../public/about.webp";
-import dynamic from "next/dynamic";
-
-const ButtonWithoutArrow = dynamic(
-  () => import("@/app/components/ButtonWithoutArrow"),
-  { ssr: false }
-);
 
 export default function About() {
   return (
@@ -31,7 +24,9 @@ export default function About() {
               użytkownika prowadzi każdy detal, czyniąc architekturę.
             </p>
           </div>
-          <ButtonWithoutArrow>Więcej o nas</ButtonWithoutArrow>
+          <button className="font-semibold-font-weight text-[clamp(0.75rem,3.5vw,1rem)] relative uppercase after:content-[''] after:bg-main-black after:absolute after:bottom-[-0.5px] after:left-0 after:w-full-width after:h-[1px] ">
+            Więcej o nas
+          </button>
         </div>
       </div>
       <div className="relative max-w-about-image-max-width-mobile xl:w-about-image-width-laptop aspect-about-image-aspect-ratio">
