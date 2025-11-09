@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pl">
       <body
-        className={`${poppins.className} antialiased h-[10000px] bg-bg-main`}
+        className={`${poppins.className} antialiased h-[10009px] bg-bg-main`}
       >
         <Header />
         <SmoothScroll />
