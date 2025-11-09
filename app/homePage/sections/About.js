@@ -1,6 +1,12 @@
+"use client";
 import Image from "next/image";
 import AboutImage from "../../../public/about.webp";
-import ButtonWithoutArrow from "@/app/components/ButtonWithoutArrow";
+import dynamic from "next/dynamic";
+
+const ButtonWithoutArrow = dynamic(
+  () => import("@/app/components/ButtonWithoutArrow"),
+  { ssr: false }
+);
 
 export default function About() {
   return (
@@ -37,6 +43,7 @@ export default function About() {
           sizes="(max-width: 768px) 90vw, (max-width: 1280px) 80vw, 60vw"
           className="object-cover"
           quality={40}
+          priority={false}
         />
       </div>
     </section>

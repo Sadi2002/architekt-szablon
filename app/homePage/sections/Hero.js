@@ -1,14 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import heroImage from "../../../public/main.webp";
-import ButtonWithArrow from "@/app/components/ButtonWithArrow";
 import ArrowBlack from "../../../public/arrow.png";
-import Overlay from "@/app/components/Overlay";
+
+import dynamic from "next/dynamic";
+
+const ButtonWithArrow = dynamic(
+  () => import("@/app/components/ButtonWithArrow"),
+  { ssr: false }
+);
 
 export default function Hero() {
   return (
     <section className="h-hero-height relative top-0 left-0 w-full-width">
       <div>
-        <Overlay />
+        <div className="absolute top-0 left-0 w-full-width h-hero-height bg-[rgba(0,0,0,0.55)] -z-1"></div>
         <Image
           src={heroImage}
           fill
@@ -16,6 +23,7 @@ export default function Hero() {
           placeholder="blur"
           alt="nowoczesny dom"
           className="object-cover -z-10 absolute"
+          priority
         />
       </div>
       <div className="mx-margin-mobile flex flex-col h-full-height relative md:mx-tablet lg:mx-small-laptop 2xl:mx-desktop">

@@ -1,10 +1,16 @@
+"use client";
 import Image from "next/image";
 import Project1 from "../../../public/project1.webp";
 import Project2 from "../../../public/project2.webp";
 import Project3 from "../../../public/project3.webp";
 import Project4 from "../../../public/project4.webp";
 import ArrowWhite from "../../../public/arrow-right-white.png";
-import ButtonWithArrow from "@/app/components/ButtonWithArrow";
+import dynamic from "next/dynamic";
+
+const ButtonWithArrow = dynamic(
+  () => import("@/app/components/ButtonWithArrow"),
+  { ssr: false } // tylko po stronie klienta
+);
 
 export default function Projects() {
   return (
@@ -23,6 +29,7 @@ export default function Projects() {
                 placeholder="blur"
                 className="object-cover"
                 fill
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 30vw"
               />
             </div>
             <div className="flex justify-between mt-[5px]  w-full-width text-[clamp(12px,3.35vw,1rem)]">
@@ -40,6 +47,7 @@ export default function Projects() {
                 placeholder="blur"
                 className="object-cover lg:hidden"
                 fill
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 30vw"
               />
               <Image
                 src={Project4}
@@ -48,6 +56,7 @@ export default function Projects() {
                 placeholder="blur"
                 className="object-cover hidden lg:block"
                 fill
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 30vw"
               />
             </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
@@ -66,6 +75,7 @@ export default function Projects() {
                 placeholder="blur"
                 className="object-cover lg:hidden"
                 fill
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 30vw"
               />
               <Image
                 src={Project2}
@@ -74,6 +84,7 @@ export default function Projects() {
                 placeholder="blur"
                 className="object-cover hidden lg:block"
                 fill
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 30vw"
               />
             </div>
             <div className="flex justify-between mt-[5px]  w-full-width text-[clamp(12px,3.35vw,1rem)]">
@@ -90,6 +101,7 @@ export default function Projects() {
                 placeholder="blur"
                 className="object-cover lg:hidden"
                 fill
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 30vw"
               />
               <Image
                 src={Project3}
@@ -98,6 +110,7 @@ export default function Projects() {
                 placeholder="blur"
                 className="object-cover hidden lg:block"
                 fill
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 30vw"
               />
             </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
