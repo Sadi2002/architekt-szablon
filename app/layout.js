@@ -11,9 +11,7 @@ const poppins = Poppins({
 export default function RootLayout({ children }) {
   return (
     <html lang="pl">
-      <body
-        className={`${poppins.className} antialiased h-[10000px] bg-bg-main`}
-      >
+      <body className={`${poppins.className} antialiased bg-bg-main`}>
         <Header />
         <main>{children}</main>
       </body>
