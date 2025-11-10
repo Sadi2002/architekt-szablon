@@ -3,10 +3,17 @@
 import { usePathname } from "next/navigation";
 
 import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
 
 export default function Navigation() {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <nav
@@ -20,7 +27,10 @@ export default function Navigation() {
       </span>
 
       {/* MOBILE BURGER */}
-      <div className="md:hidden flex flex-col gap-burger-line-gap items-end">
+      <div
+        className="md:hidden flex flex-col gap-burger-line-gap items-end"
+        onClick={toggleMenu}
+      >
         <span
           className={`h-burger-line-height w-[17px] bg-main-black ${
             isHome ? "bg-main-white" : "bg-black"
@@ -32,6 +42,52 @@ export default function Navigation() {
           }`}
         ></span>
       </div>
+
+      {/* MOBILE MENU */}
+      {isOpen && (
+        <div className="h-[100dvh] w-full fixed top-0 left-0 bg-main-black z-50 md:hidden">
+          <div className="flex justify-between items-center mx-margin-mobile pt-mobile-navigation-top">
+            <Link href="/">Sadowski Studio</Link>
+            <span
+              className="uppercase text-[14px] text-white font-medium-font-weight"
+              onClick={toggleMenu}
+            >
+              Close
+            </span>
+          </div>
+          <ul className="flex flex-col gap-[5px] ml-margin-mobile absolute top-[50%] left-0 transform -translate-y-1/2 w-full text-[clamp(22px,6vw,32px)] font-normal-font-weight uppercase">
+            <li>
+              <Link href="#">About us</Link>
+            </li>
+            <li>
+              <Link href="#">Portfolio</Link>
+            </li>
+            <li>
+              <Link href="#">Blog</Link>
+            </li>
+            <li>
+              <Link href="#">Contact</Link>
+            </li>
+          </ul>
+          <div className="absolute bottom-[20px] left-0 w-full flex justify-between items-end">
+            <ul className="flex flex-col text-[8px] gap-[8px] ml-margin-mobile">
+              <li>
+                <Link href={"#"}>Facebook</Link>
+              </li>
+              <li>
+                <Link href={"#"}>Instagrm</Link>
+              </li>
+              <li>
+                <Link href={"#"}>Tiktok</Link>
+              </li>
+            </ul>
+            <ul className="flex flex-col text-[8px] gap-[8px] text-right mr-margin-mobile">
+              <Link href={"#"}>Polityka prywatności</Link>
+              <span>2025 wszelkie prawa zastrzeżone</span>
+            </ul>
+          </div>
+        </div>
+      )}
 
       {/* DESKTOP MENU */}
       <ul className="hidden md:flex gap-between-navigation-links items-center xl:gap-between-navigation-links-xl">
