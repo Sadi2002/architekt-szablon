@@ -277,7 +277,7 @@ export default function PortfolioClient() {
                 <Link
                   href={`/portfolio/${p.slug}`}
                   ref={(el) => (linkRefs.current[i] = el)}
-                  className="block text-[50px] 2xl:text-[80px] leading-[0.9] font-light whitespace-nowrap transition-opacity duration-150 ease-linear will-change-opacity"
+                  className="block text-[50px] 2xl:text-[80px] leading-[0.9] font-normal whitespace-nowrap transition-opacity duration-150 ease-linear will-change-opacity"
                   style={{
                     opacity: opacities[i],
                     pointerEvents:
