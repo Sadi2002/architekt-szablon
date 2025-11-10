@@ -3,7 +3,6 @@
 import { usePathname } from "next/navigation";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 
 export default function Navigation() {
@@ -17,7 +16,7 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`flex items-center justify-between mx-margin-mobile pt-mobile-navigation-top md:mx-tablet 2xl:mx-desktop xl:pt-desktop-navigation-top ${
+      className={`flex items-center justify-between mx-margin-mobile pt-mobile-navigation-top md:mx-tablet 2xl:mx-desktop lg:pt-desktop-navigation-top ${
         isHome ? "text-main-white" : "text-main-black"
       }`}
     >
