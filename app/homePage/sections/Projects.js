@@ -32,7 +32,6 @@ export default function Projects() {
       });
     }
   }, []);
-  // const isDesktop = useMediaQuery("(min-width: 1024px)");
 
   return (
     <section className="mx-margin-mobile md:mx-tablet lg:mx-small-laptop mb-[50px]">

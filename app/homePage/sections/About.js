@@ -5,32 +5,48 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function About() {
-  const [src, setSrc] = useState("/about-small.jpg");
-  const [loaded, setLoaded] = useState(false);
+  // Track only whether the large image has loaded
+  const [largeLoaded, setLargeLoaded] = useState(false);
 
   useEffect(() => {
-    // Ładujemy duży obraz dopiero, gdy przeglądarka jest „idle”
+    let cancelled = false;
+
+    const preloadLarge = () => {
+      const img = new window.Image();
+      img.src = "/about-large.jpg"; // pełne 4K
+      img.onload = () => {
+        if (!cancelled) {
+          setLargeLoaded(true);
+        }
+      };
+    };
+
+    // Prefer idle when available
     if ("requestIdleCallback" in window) {
-      requestIdleCallback(() => {
-        const img = new window.Image();
-        img.src = "/about-large.jpg"; // pełne 4K
-        img.onload = () => {
-          setSrc("/about-large.jpg");
-          setLoaded(true);
-        };
-      });
-    } else {
-      // fallback jeśli brak requestIdleCallback
-      window.addEventListener("load", () => {
-        const img = new window.Image();
-        img.src = "/about-large.jpg";
-        img.onload = () => {
-          setSrc("/about-large.jpg");
-          setLoaded(true);
-        };
-      });
+      const id = requestIdleCallback(preloadLarge);
+      return () => {
+        // @ts-ignore - not available in all browsers
+        if (typeof cancelIdleCallback === "function") {
+          // @ts-ignore
+          cancelIdleCallback(id);
+        }
+        cancelled = true;
+      };
     }
+
+    // Fallback: if page already loaded, run immediately; otherwise wait for load once
+    if (document.readyState === "complete") {
+      preloadLarge();
+    } else {
+      window.addEventListener("load", preloadLarge, { once: true });
+    }
+
+    return () => {
+      window.removeEventListener("load", preloadLarge);
+      cancelled = true;
+    };
   }, []);
+
   return (
     <section className="pt-about-section-padding-top-mobile flex flex-col gap-about-section-gap-mobile xl:gap-about-section-gap-laptop xl:pt-about-section-padding-top-laptop 2xl:gap-about-section-gap-desktop mb-about-section-margin-bottom xl:mb-[150px]">
       <div className=" mx-margin-mobile lg:flex md:mx-tablet lg:mx-small-laptop lg:justify-between xl:justify-between 2xl:mx-desktop">
@@ -59,6 +75,7 @@ export default function About() {
         </div>
       </div>
       <div className="relative max-w-about-image-max-width-mobile xl:w-about-image-width-laptop aspect-about-image-aspect-ratio">
+        {/* Low-res placeholder */}
         <Image
           src="/about-small.jpg"
           alt="pokój"
@@ -68,16 +85,17 @@ export default function About() {
           priority={false}
         />
 
-        {loaded && (
-          <Image
-            src="/about-large.jpg"
-            alt="pokój"
-            fill
-            className="object-cover transition-opacity duration-500 opacity-100"
-            unoptimized
-            priority={false}
-          />
-        )}
+        {/* High-res image fades in when loaded */}
+        <Image
+          src="/about-large.jpg"
+          alt="pokój"
+          fill
+          className={`object-cover transition-opacity duration-500 ${
+            largeLoaded ? "opacity-100" : "opacity-0"
+          }`}
+          unoptimized
+          priority={false}
+        />
       </div>
     </section>
   );
