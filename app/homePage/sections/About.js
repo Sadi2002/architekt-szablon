@@ -63,7 +63,7 @@ export default function About() {
           src="/test3.jpg"
           alt="pokój"
           fill
-          className="object-cover"
+          className="object-cover opacity-50"
           unoptimized
           priority={false}
         />

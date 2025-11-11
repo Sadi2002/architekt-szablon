@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 
 export default function Projects() {
   const [src, setSrc] = useState("/test3.jpg");
-
+  const [loaded, setLoaded] = useState(false);
   useEffect(() => {
     // Ładujemy duży obraz dopiero, gdy przeglądarka jest „idle”
     if ("requestIdleCallback" in window) {
@@ -18,6 +18,7 @@ export default function Projects() {
         img.src = "/test2.jpg"; // pełne 4K
         img.onload = () => {
           setSrc("/test2.jpg");
+          setLoaded(true);
         };
       });
     } else {
@@ -44,13 +45,24 @@ export default function Projects() {
           <div className="max-w-[80%] mb-[50px] lg:mb-[30px] lg:max-w-[100%]">
             <div className="relative aspect-8/7 ">
               <Image
-                src={src}
-                alt="projekt 1"
-                className="object-cover"
+                src="/test3.jpg"
+                alt="pokój"
                 fill
+                className="object-cover opacity-50"
                 unoptimized
                 priority={false}
               />
+
+              {loaded && (
+                <Image
+                  src="/test2.jpg"
+                  alt="pokój"
+                  fill
+                  className="object-cover transition-opacity duration-500 opacity-100"
+                  unoptimized
+                  priority={false}
+                />
+              )}
             </div>
             <div className="flex justify-between mt-[5px]  w-full-width text-[clamp(12px,3.35vw,1rem)] font-normal-font-weight">
               <span>Our project</span>
@@ -61,13 +73,24 @@ export default function Projects() {
           <div className="w-[86%] flex flex-col items-end self-end mb-[50px] lg:mb-[0px] lg:w-[100%] lg:h-full">
             <div className="flex flex-col justify-end w-full-width relative aspect-5/3 lg:h-full">
               <Image
-                src={src}
-                alt="projekt 2"
-                className="object-cover "
+                src="/test3.jpg"
+                alt="pokój"
                 fill
+                className="object-cover opacity-50"
                 unoptimized
                 priority={false}
               />
+
+              {loaded && (
+                <Image
+                  src="/test2.jpg"
+                  alt="pokój"
+                  fill
+                  className="object-cover transition-opacity duration-500 opacity-100"
+                  unoptimized
+                  priority={false}
+                />
+              )}
             </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
               <span>Our project</span>
@@ -79,13 +102,24 @@ export default function Projects() {
           <div className="w-full-width mb-[50px] lg:mb-[30px]">
             <div className="relative aspect-8/5">
               <Image
-                src={src}
-                alt="projekt 3"
-                className="object-cover"
+                src="/test3.jpg"
+                alt="pokój"
                 fill
+                className="object-cover opacity-50"
                 unoptimized
                 priority={false}
               />
+
+              {loaded && (
+                <Image
+                  src="/test2.jpg"
+                  alt="pokój"
+                  fill
+                  className="object-cover transition-opacity duration-500 opacity-100"
+                  unoptimized
+                  priority={false}
+                />
+              )}
             </div>
             <div className="flex justify-between mt-[5px]  w-full-width text-[clamp(12px,3.35vw,1rem)]">
               <span>Our project</span>
@@ -95,13 +129,24 @@ export default function Projects() {
           <div className="max-w-[78%] mb-[30px] lg:w-[100%] lg:max-w-[100%] lg:mb-[60px]">
             <div className="relative aspect-7/8 lg:aspect-8/7 ">
               <Image
-                src={src}
-                alt="projekt 5"
-                className="object-cover"
+                src="/test3.jpg"
+                alt="pokój"
                 fill
+                className="object-cover opacity-50"
                 unoptimized
                 priority={false}
               />
+
+              {loaded && (
+                <Image
+                  src="/test2.jpg"
+                  alt="pokój"
+                  fill
+                  className="object-cover transition-opacity duration-500 opacity-100"
+                  unoptimized
+                  priority={false}
+                />
+              )}
             </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
               <span>Our project</span>
