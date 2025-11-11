@@ -13,6 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pl">
       <head>
+        {/* Preconnect do Google Fonts, przyspiesza pobranie fontów */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

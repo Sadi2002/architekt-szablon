@@ -3,21 +3,20 @@
 import Image from "next/image";
 
 import ArrowWhite from "../../../public/arrow-right-white.png";
-// import { useMediaQuery } from "usehooks-ts"
 
 import { useState, useEffect } from "react";
 
 export default function Projects() {
-  const [src, setSrc] = useState("/test3.jpg");
+  const [src, setSrc] = useState("/projekt2-small.jpg");
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
     // Ładujemy duży obraz dopiero, gdy przeglądarka jest „idle”
     if ("requestIdleCallback" in window) {
       requestIdleCallback(() => {
         const img = new window.Image();
-        img.src = "/test2.jpg"; // pełne 4K
+        img.src = "/projekt2-large.jpg"; // pełne 4K
         img.onload = () => {
-          setSrc("/test2.jpg");
+          setSrc("/projekt2-large.jpg");
           setLoaded(true);
         };
       });
@@ -25,9 +24,9 @@ export default function Projects() {
       // fallback jeśli brak requestIdleCallback
       window.addEventListener("load", () => {
         const img = new window.Image();
-        img.src = "/test2.jpg";
+        img.src = "/projekt2-large.jpg";
         img.onload = () => {
-          setSrc("/test2.jpg");
+          setSrc("/projekt2-large.jpg");
           setLoaded(true);
         };
       });
@@ -42,10 +41,10 @@ export default function Projects() {
       </h3>
       <div className="flex flex-col lg:flex-row lg:justify-between">
         <div className="flex flex-col lg:w-[calc(50%-10px)]">
-          <div className="max-w-[80%] mb-[50px]  lg:max-w-[100%]">
+          <div className="max-w-[80%] mb-[50px] lg:mb-[30px] lg:max-w-[100%]">
             <div className="relative aspect-8/7 ">
               <Image
-                src="/test3.jpg"
+                src="/projekt2-small.jpg"
                 alt="pokój"
                 fill
                 className="object-cover opacity-50"
@@ -55,7 +54,7 @@ export default function Projects() {
 
               {loaded && (
                 <Image
-                  src="/test2.jpg"
+                  src="/projekt2-large.jpg"
                   alt="pokój"
                   fill
                   className="object-cover transition-opacity duration-500 opacity-100"
@@ -73,7 +72,7 @@ export default function Projects() {
           <div className="w-[86%] flex flex-col items-end self-end mb-[50px] lg:mb-[0px] lg:w-[100%] lg:h-full">
             <div className="flex flex-col justify-end w-full-width relative aspect-5/3 lg:h-full">
               <Image
-                src="/test3.jpg"
+                src="/projekt2-small.jpg"
                 alt="pokój"
                 fill
                 className="object-cover opacity-50"
@@ -83,7 +82,7 @@ export default function Projects() {
 
               {loaded && (
                 <Image
-                  src="/test2.jpg"
+                  src="/projekt2-large.jpg"
                   alt="pokój"
                   fill
                   className="object-cover transition-opacity duration-500 opacity-100"
@@ -99,10 +98,10 @@ export default function Projects() {
           </div>
         </div>
         <div className="lg:flex lg:flex-col lg:w-[calc(50%-10px)]">
-          <div className="w-full-width mb-[50px] ">
+          <div className="w-full-width mb-[50px] lg:mb-[30px]">
             <div className="relative aspect-8/5">
               <Image
-                src="/test3.jpg"
+                src="/projekt2-small.jpg"
                 alt="pokój"
                 fill
                 className="object-cover opacity-50"
@@ -112,7 +111,7 @@ export default function Projects() {
 
               {loaded && (
                 <Image
-                  src="/test2.jpg"
+                  src="/projekt2-large.jpg"
                   alt="pokój"
                   fill
                   className="object-cover transition-opacity duration-500 opacity-100"
@@ -129,7 +128,7 @@ export default function Projects() {
           <div className="max-w-[78%] mb-[30px] lg:w-[100%] lg:max-w-[100%] lg:mb-[60px]">
             <div className="relative aspect-7/8 lg:aspect-8/7 ">
               <Image
-                src="/test3.jpg"
+                src="/projekt2-small.jpg"
                 alt="pokój"
                 fill
                 className="object-cover opacity-50"
@@ -139,7 +138,7 @@ export default function Projects() {
 
               {loaded && (
                 <Image
-                  src="/test2.jpg"
+                  src="/projekt2-large.jpg"
                   alt="pokój"
                   fill
                   className="object-cover transition-opacity duration-500 opacity-100"

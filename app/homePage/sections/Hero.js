@@ -10,7 +10,6 @@ export default function Hero() {
         <Image
           src={heroImage}
           fill
-          quality={40}
           alt="nowoczesny dom"
           className="object-cover -z-10 absolute"
           priority

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function About() {
-  const [src, setSrc] = useState("/test3.jpg");
+  const [src, setSrc] = useState("/about-small.jpg");
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -13,9 +13,9 @@ export default function About() {
     if ("requestIdleCallback" in window) {
       requestIdleCallback(() => {
         const img = new window.Image();
-        img.src = "/test2.jpg"; // pełne 4K
+        img.src = "/about-large.jpg"; // pełne 4K
         img.onload = () => {
-          setSrc("/test2.jpg");
+          setSrc("/about-large.jpg");
           setLoaded(true);
         };
       });
@@ -23,9 +23,9 @@ export default function About() {
       // fallback jeśli brak requestIdleCallback
       window.addEventListener("load", () => {
         const img = new window.Image();
-        img.src = "/test2.jpg";
+        img.src = "/about-large.jpg";
         img.onload = () => {
-          setSrc("/test2.jpg");
+          setSrc("/about-large.jpg");
           setLoaded(true);
         };
       });
@@ -60,7 +60,7 @@ export default function About() {
       </div>
       <div className="relative max-w-about-image-max-width-mobile xl:w-about-image-width-laptop aspect-about-image-aspect-ratio">
         <Image
-          src="/test3.jpg"
+          src="/about-small.jpg"
           alt="pokój"
           fill
           className="object-cover opacity-50"
@@ -70,7 +70,7 @@ export default function About() {
 
         {loaded && (
           <Image
-            src="/test2.jpg"
+            src="/about-large.jpg"
             alt="pokój"
             fill
             className="object-cover transition-opacity duration-500 opacity-100"
