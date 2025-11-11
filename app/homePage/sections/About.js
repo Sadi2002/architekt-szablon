@@ -60,15 +60,24 @@ export default function About() {
       </div>
       <div className="relative max-w-about-image-max-width-mobile xl:w-about-image-width-laptop aspect-about-image-aspect-ratio">
         <Image
-          src={src}
+          src="/test3-lq.jpg"
           alt="pokój"
           fill
-          className={`object-cover transition-opacity duration-500 ${
-            loaded ? "opacity-100" : "opacity-50"
-          }`}
+          className="object-cover"
           unoptimized
           priority={false}
         />
+
+        {loaded && (
+          <Image
+            src="/test2.jpg"
+            alt="pokój"
+            fill
+            className="object-cover transition-opacity duration-500 opacity-100"
+            unoptimized
+            priority={false}
+          />
+        )}
       </div>
     </section>
   );
