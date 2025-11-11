@@ -11,10 +11,10 @@ export const poppins = Poppins({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pl">
-      <body className={`${poppins.className} h-[1000px] bg-bg-main`}>
+    <html lang="pl" className="scroll-smooth">
+      <body className={`${poppins.className} min-h-screen bg-bg-main`}>
         <Header />
-        <main>{children}</main>
+        <main className="w-full">{children}</main>
       </body>
     </html>
   );
