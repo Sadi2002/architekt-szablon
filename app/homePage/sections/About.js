@@ -1,5 +1,6 @@
 import Image from "next/image";
-import AboutImage from "../../../public/about.webp";
+import AboutImage from "../../../public/test2.jpg";
+import AboutImage2 from "../../../public/1.webp";
 
 export default function About() {
   return (
@@ -33,12 +34,13 @@ export default function About() {
         <Image
           src={AboutImage}
           alt="pokój"
-          placeholder="blur"
           fill
-          sizes="(max-width: 768px) 90vw, (max-width: 1280px) 80vw, 60vw"
           className="object-cover"
-          quality={40}
+          placeholder="blur"
+          quality={100}
           priority={false}
+          blurDataURL="/1.webp"
+          unoptimized
         />
       </div>
     </section>
