@@ -5,45 +5,14 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function About() {
-  // Track only whether the large image has loaded
-  const [largeLoaded, setLargeLoaded] = useState(false);
+  const [src, setSrc] = useState("/about-small.jpg");
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    let cancelled = false;
-
-    const preloadLarge = () => {
-      const img = new window.Image();
-      img.src = "/about-large.jpg"; // pełne 4K
-      img.onload = () => {
-        if (!cancelled) {
-          setLargeLoaded(true);
-        }
-      };
-    };
-
-    // Prefer idle when available
-    if ("requestIdleCallback" in window) {
-      const id = requestIdleCallback(preloadLarge);
-      return () => {
-        // @ts-ignore - not available in all browsers
-        if (typeof cancelIdleCallback === "function") {
-          // @ts-ignore
-          cancelIdleCallback(id);
-        }
-        cancelled = true;
-      };
-    }
-
-    // Fallback: if page already loaded, run immediately; otherwise wait for load once
-    if (document.readyState === "complete") {
-      preloadLarge();
-    } else {
-      window.addEventListener("load", preloadLarge, { once: true });
-    }
-
-    return () => {
-      window.removeEventListener("load", preloadLarge);
-      cancelled = true;
+    const img = new window.Image();
+    img.src = "/about-large.jpg";
+    img.onload = () => {
+      setSrc("/about-large.jpg");
     };
   }, []);
 
@@ -75,26 +44,15 @@ export default function About() {
         </div>
       </div>
       <div className="relative max-w-about-image-max-width-mobile xl:w-about-image-width-laptop aspect-about-image-aspect-ratio">
-        {/* Low-res placeholder */}
         <Image
-          src="/about-small.jpg"
+          src={src}
           alt="pokój"
           fill
-          className="object-cover opacity-50"
-          unoptimized
-          priority={false}
-        />
-
-        {/* High-res image fades in when loaded */}
-        <Image
-          src="/about-large.jpg"
-          alt="pokój"
-          fill
-          className={`object-cover transition-opacity duration-500 ${
-            largeLoaded ? "opacity-100" : "opacity-0"
+          className={`object-cover transition-opacity duration-700 ${
+            src === "/about-small.jpg" ? "opacity-50" : "opacity-100"
           }`}
+          onLoadingComplete={() => setIsLoaded(true)}
           unoptimized
-          priority={false}
         />
       </div>
     </section>
