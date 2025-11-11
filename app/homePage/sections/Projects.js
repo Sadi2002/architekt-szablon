@@ -7,30 +7,32 @@ import ArrowWhite from "../../../public/arrow-right-white.png";
 import { useState, useEffect } from "react";
 
 export default function Projects() {
-  const [src, setSrc] = useState("/projekt2-small.jpg");
   const [loaded, setLoaded] = useState(false);
+  const [loaded2, setLoaded2] = useState(false);
+  const [loaded3, setLoaded3] = useState(false);
+  const [loaded4, setLoaded4] = useState(false);
+
   useEffect(() => {
-    // Ładujemy duży obraz dopiero, gdy przeglądarka jest „idle”
-    if ("requestIdleCallback" in window) {
-      requestIdleCallback(() => {
-        const img = new window.Image();
-        img.src = "/projekt2-large.jpg"; // pełne 4K
-        img.onload = () => {
-          setSrc("/projekt2-large.jpg");
-          setLoaded(true);
-        };
-      });
-    } else {
-      // fallback jeśli brak requestIdleCallback
-      window.addEventListener("load", () => {
-        const img = new window.Image();
-        img.src = "/projekt2-large.jpg";
-        img.onload = () => {
-          setSrc("/projekt2-large.jpg");
-          setLoaded(true);
-        };
-      });
-    }
+    const img = new window.Image();
+    img.src = "/projekt1-large.jpg";
+    img.onload = () => {
+      setLoaded(true);
+    };
+    const img2 = new window.Image();
+    img2.src = "/projekt2-large.jpg";
+    img2.onload = () => {
+      setLoaded2(true);
+    };
+    const img3 = new window.Image();
+    img3.src = "/projekt3-large.jpg";
+    img3.onload = () => {
+      setLoaded3(true);
+    };
+    const img4 = new window.Image();
+    img4.src = "/projekt4-large.jpg";
+    img4.onload = () => {
+      setLoaded4(true);
+    };
   }, []);
 
   return (
@@ -46,21 +48,22 @@ export default function Projects() {
                 src="/projekt2-small.jpg"
                 alt="pokój"
                 fill
-                className="object-cover opacity-50"
+                className={`object-cover transition-opacity duration-700 ${
+                  loaded2 ? "opacity-0" : "opacity-50"
+                }`}
                 unoptimized
-                priority={false}
+                priority
               />
 
-              {loaded && (
-                <Image
-                  src="/projekt2-large.jpg"
-                  alt="pokój"
-                  fill
-                  className="object-cover transition-opacity duration-500 opacity-100"
-                  unoptimized
-                  priority={false}
-                />
-              )}
+              <Image
+                src="/projekt2-large.jpg"
+                alt="pokój"
+                fill
+                className={`object-cover transition-opacity duration-700 ${
+                  loaded2 ? "opacity-100" : "opacity-0"
+                }`}
+                unoptimized
+              />
             </div>
             <div className="flex justify-between mt-[5px]  w-full-width text-[clamp(12px,3.35vw,1rem)] font-normal-font-weight">
               <span>Our project</span>
@@ -71,24 +74,25 @@ export default function Projects() {
           <div className="w-[86%] flex flex-col items-end self-end mb-[50px] lg:mb-[0px] lg:w-[100%] lg:h-full">
             <div className="flex flex-col justify-end w-full-width relative aspect-5/3 lg:h-full">
               <Image
-                src="/projekt2-small.jpg"
+                src="/projekt4-small.jpg"
                 alt="pokój"
                 fill
-                className="object-cover opacity-50"
+                className={`object-cover transition-opacity duration-700 ${
+                  loaded4 ? "opacity-0" : "opacity-50"
+                }`}
                 unoptimized
-                priority={false}
+                priority
               />
 
-              {loaded && (
-                <Image
-                  src="/projekt2-large.jpg"
-                  alt="pokój"
-                  fill
-                  className="object-cover transition-opacity duration-500 opacity-100"
-                  unoptimized
-                  priority={false}
-                />
-              )}
+              <Image
+                src="/projekt4-large.jpg"
+                alt="pokój"
+                fill
+                className={`object-cover transition-opacity duration-700 ${
+                  loaded4 ? "opacity-100" : "opacity-0"
+                }`}
+                unoptimized
+              />
             </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
               <span>Our project</span>
@@ -100,24 +104,25 @@ export default function Projects() {
           <div className="w-full-width mb-[50px] lg:mb-[30px]">
             <div className="relative aspect-8/5">
               <Image
-                src="/projekt2-small.jpg"
+                src="/projekt3-small.jpg"
                 alt="pokój"
                 fill
-                className="object-cover opacity-50"
+                className={`object-cover transition-opacity duration-700 ${
+                  loaded3 ? "opacity-0" : "opacity-50"
+                }`}
                 unoptimized
-                priority={false}
+                priority
               />
 
-              {loaded && (
-                <Image
-                  src="/projekt2-large.jpg"
-                  alt="pokój"
-                  fill
-                  className="object-cover transition-opacity duration-500 opacity-100"
-                  unoptimized
-                  priority={false}
-                />
-              )}
+              <Image
+                src="/projekt3-large.jpg"
+                alt="pokój"
+                fill
+                className={`object-cover transition-opacity duration-700 ${
+                  loaded3 ? "opacity-100" : "opacity-0"
+                }`}
+                unoptimized
+              />
             </div>
             <div className="flex justify-between mt-[5px]  w-full-width text-[clamp(12px,3.35vw,1rem)]">
               <span>Our project</span>
@@ -127,24 +132,25 @@ export default function Projects() {
           <div className="max-w-[78%] mb-[30px] lg:w-[100%] lg:max-w-[100%] lg:mb-[60px]">
             <div className="relative aspect-7/8 lg:aspect-8/7 ">
               <Image
-                src="/projekt2-small.jpg"
+                src="/projekt1-small.jpg"
                 alt="pokój"
                 fill
-                className="object-cover opacity-50"
+                className={`object-cover transition-opacity duration-700 ${
+                  loaded ? "opacity-0" : "opacity-50"
+                }`}
                 unoptimized
-                priority={false}
+                priority
               />
 
-              {loaded && (
-                <Image
-                  src="/projekt2-large.jpg"
-                  alt="pokój"
-                  fill
-                  className="object-cover transition-opacity duration-500 opacity-100"
-                  unoptimized
-                  priority={false}
-                />
-              )}
+              <Image
+                src="/projekt1-large.jpg"
+                alt="pokój"
+                fill
+                className={`object-cover transition-opacity duration-700 ${
+                  loaded ? "opacity-100" : "opacity-0"
+                }`}
+                unoptimized
+              />
             </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
               <span>Our project</span>
