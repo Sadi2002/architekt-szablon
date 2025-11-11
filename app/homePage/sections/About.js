@@ -54,7 +54,7 @@ export default function About() {
           priority
         />
 
-        {/* Duże zdjęcie — fade-in po załadowaniu */}
+        {/* Duże zdjęcie — fade-in po załadowani */}
         <Image
           src="/about-large.jpg"
           alt="pokój"
