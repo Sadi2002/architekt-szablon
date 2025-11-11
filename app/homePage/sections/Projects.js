@@ -7,49 +7,31 @@ import ArrowWhite from "../../../public/arrow-right-white.png";
 import { useState, useEffect } from "react";
 
 export default function Projects() {
+  // Stany kontrolujące, czy duży obraz się załadował
   const [loaded, setLoaded] = useState(false);
   const [loaded2, setLoaded2] = useState(false);
   const [loaded3, setLoaded3] = useState(false);
   const [loaded4, setLoaded4] = useState(false);
-  const [pageLoaded, setPageLoaded] = useState(false); // NOWY STAN
 
-  // 1. Sprawdzenie, czy cała strona się załadowała
+  // Efekt uruchamiany natychmiast po wyrenderowaniu komponentu
   useEffect(() => {
-    const handleLoad = () => setPageLoaded(true);
+    // Ładowanie dużych obrazów w tle
+    const img = new window.Image();
+    img.src = "/projekt1-large.jpg";
+    img.onload = () => setLoaded(true);
 
-    if (document.readyState === "complete") {
-      handleLoad();
-    } else {
-      window.addEventListener("load", handleLoad);
-      return () => window.removeEventListener("load", handleLoad);
-    }
+    const img2 = new window.Image();
+    img2.src = "/projekt2-large.jpg";
+    img2.onload = () => setLoaded2(true);
+
+    const img3 = new window.Image();
+    img3.src = "/projekt3-large.jpg";
+    img3.onload = () => setLoaded3(true);
+
+    const img4 = new window.Image();
+    img4.src = "/projekt4-large.jpg";
+    img4.onload = () => setLoaded4(true);
   }, []);
-
-  // 2. Ładowanie dużych obrazów TYLKO GDY 'pageLoaded' jest true
-  useEffect(() => {
-    if (pageLoaded) {
-      const img = new window.Image();
-      img.src = "/projekt1-large.jpg";
-      img.onload = () => {
-        setLoaded(true);
-      };
-      const img2 = new window.Image();
-      img2.src = "/projekt2-large.jpg";
-      img2.onload = () => {
-        setLoaded2(true);
-      };
-      const img3 = new window.Image();
-      img3.src = "/projekt3-large.jpg";
-      img3.onload = () => {
-        setLoaded3(true);
-      };
-      const img4 = new window.Image();
-      img4.src = "/projekt4-large.jpg";
-      img4.onload = () => {
-        setLoaded4(true);
-      };
-    }
-  }, [pageLoaded]); // Zależność zmieniona na 'pageLoaded'
 
   return (
     <section className="mx-margin-mobile md:mx-tablet lg:mx-small-laptop mb-[50px]">
@@ -60,19 +42,18 @@ export default function Projects() {
         <div className="flex flex-col lg:w-[calc(50%-10px)]">
           <div className="max-w-[80%] mb-[50px] lg:mb-[30px] lg:max-w-[100%]">
             <div className="relative aspect-8/7 overflow-hidden ">
+              {/* MAŁY OBRAZ - Ładuje się natychmiast, jest rozmyty */}
               <Image
                 src="/projekt2-small.jpg"
                 alt="pokój"
                 fill
-                // UWAGA: Zmieniono 'opacity-50' na 'blur-lg', aby osiągnąć efekt "bluru" jak w "About" i usunięto klasę 'opacity'
-                className={`object-cover transition-filter duration-700 ${
+                className={`object-cover transition-filter duration-700 ease-in-out ${
                   loaded2 ? "blur-0" : "blur-lg"
                 }`}
                 style={{ objectFit: "cover" }}
-                unoptimized
               />
 
-              {/* Duże zdjęcie - pokazujemy tylko, gdy załadowane i usuwamy klasę 'opacity-100' */}
+              {/* DUŻY OBRAZ - Renderowany i widoczny TYLKO po załadowaniu */}
               {loaded2 && (
                 <Image
                   src="/projekt2-large.jpg"
@@ -92,17 +73,18 @@ export default function Projects() {
 
           <div className="w-[86%] flex flex-col items-end self-end mb-[50px] lg:mb-[0px] lg:w-[100%] lg:h-full">
             <div className="flex flex-col justify-end w-full-width relative aspect-5/3 overflow-hidden lg:h-full">
+              {/* MAŁY OBRAZ */}
               <Image
                 src="/projekt4-small.jpg"
                 alt="pokój"
                 fill
-                className={`object-cover transition-filter duration-700 ${
+                className={`object-cover transition-filter duration-700 ease-in-out ${
                   loaded4 ? "blur-0" : "blur-lg"
                 }`}
                 style={{ objectFit: "cover" }}
-                unoptimized
               />
 
+              {/* DUŻY OBRAZ */}
               {loaded4 && (
                 <Image
                   src="/projekt4-large.jpg"
@@ -123,17 +105,18 @@ export default function Projects() {
         <div className="lg:flex lg:flex-col lg:w-[calc(50%-10px)]">
           <div className="w-full-width mb-[50px] lg:mb-[30px]">
             <div className="relative aspect-8/5 overflow-hidden">
+              {/* MAŁY OBRAZ */}
               <Image
                 src="/projekt3-small.jpg"
                 alt="pokój"
                 fill
-                className={`object-cover transition-filter duration-700 ${
+                className={`object-cover transition-filter duration-700 ease-in-out ${
                   loaded3 ? "blur-0" : "blur-lg"
                 }`}
                 style={{ objectFit: "cover" }}
-                unoptimized
               />
 
+              {/* DUŻY OBRAZ */}
               {loaded3 && (
                 <Image
                   src="/projekt3-large.jpg"
@@ -152,17 +135,18 @@ export default function Projects() {
           </div>
           <div className="max-w-[78%] mb-[30px] lg:w-[100%] lg:max-w-[100%] lg:mb-[60px]">
             <div className="relative aspect-7/8 overflow-hidden lg:aspect-8/7 ">
+              {/* MAŁY OBRAZ */}
               <Image
                 src="/projekt1-small.jpg"
                 alt="pokój"
                 fill
-                className={`object-cover transition-filter duration-700 ${
+                className={`object-cover transition-filter duration-700 ease-in-out ${
                   loaded ? "blur-0" : "blur-lg"
                 }`}
                 style={{ objectFit: "cover" }}
-                unoptimized
               />
 
+              {/* DUŻY OBRAZ */}
               {loaded && (
                 <Image
                   src="/projekt1-large.jpg"

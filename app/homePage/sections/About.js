@@ -70,7 +70,6 @@ export default function About() {
           className={`object-cover transition-filter duration-700 ease-in-out ${
             largeLoaded ? "blur-0" : "blur-lg"
           }`}
-          unoptimized
         />
 
         {/* Duże zdjęcie renderowane dopiero po pełnym załadowaniu */}
