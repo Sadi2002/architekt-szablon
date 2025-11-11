@@ -11,29 +11,45 @@ export default function Projects() {
   const [loaded2, setLoaded2] = useState(false);
   const [loaded3, setLoaded3] = useState(false);
   const [loaded4, setLoaded4] = useState(false);
+  const [pageLoaded, setPageLoaded] = useState(false); // NOWY STAN
 
+  // 1. Sprawdzenie, czy cała strona się załadowała
   useEffect(() => {
-    const img = new window.Image();
-    img.src = "/projekt1-large.jpg";
-    img.onload = () => {
-      setLoaded(true);
-    };
-    const img2 = new window.Image();
-    img2.src = "/projekt2-large.jpg";
-    img2.onload = () => {
-      setLoaded2(true);
-    };
-    const img3 = new window.Image();
-    img3.src = "/projekt3-large.jpg";
-    img3.onload = () => {
-      setLoaded3(true);
-    };
-    const img4 = new window.Image();
-    img4.src = "/projekt4-large.jpg";
-    img4.onload = () => {
-      setLoaded4(true);
-    };
+    const handleLoad = () => setPageLoaded(true);
+
+    if (document.readyState === "complete") {
+      handleLoad();
+    } else {
+      window.addEventListener("load", handleLoad);
+      return () => window.removeEventListener("load", handleLoad);
+    }
   }, []);
+
+  // 2. Ładowanie dużych obrazów TYLKO GDY 'pageLoaded' jest true
+  useEffect(() => {
+    if (pageLoaded) {
+      const img = new window.Image();
+      img.src = "/projekt1-large.jpg";
+      img.onload = () => {
+        setLoaded(true);
+      };
+      const img2 = new window.Image();
+      img2.src = "/projekt2-large.jpg";
+      img2.onload = () => {
+        setLoaded2(true);
+      };
+      const img3 = new window.Image();
+      img3.src = "/projekt3-large.jpg";
+      img3.onload = () => {
+        setLoaded3(true);
+      };
+      const img4 = new window.Image();
+      img4.src = "/projekt4-large.jpg";
+      img4.onload = () => {
+        setLoaded4(true);
+      };
+    }
+  }, [pageLoaded]); // Zależność zmieniona na 'pageLoaded'
 
   return (
     <section className="mx-margin-mobile md:mx-tablet lg:mx-small-laptop mb-[50px]">
@@ -48,24 +64,25 @@ export default function Projects() {
                 src="/projekt2-small.jpg"
                 alt="pokój"
                 fill
-                className={`object-cover transition-opacity duration-700 ${
-                  loaded2 ? "opacity-0" : "opacity-50"
+                // UWAGA: Zmieniono 'opacity-50' na 'blur-lg', aby osiągnąć efekt "bluru" jak w "About" i usunięto klasę 'opacity'
+                className={`object-cover transition-filter duration-700 ${
+                  loaded2 ? "blur-0" : "blur-lg"
                 }`}
                 style={{ objectFit: "cover" }}
                 unoptimized
-                priority
               />
 
-              <Image
-                src="/projekt2-large.jpg"
-                alt="pokój"
-                fill
-                className={`object-cover transition-opacity duration-700 ${
-                  loaded2 ? "opacity-100" : "opacity-0"
-                }`}
-                style={{ objectFit: "cover" }}
-                unoptimized
-              />
+              {/* Duże zdjęcie - pokazujemy tylko, gdy załadowane i usuwamy klasę 'opacity-100' */}
+              {loaded2 && (
+                <Image
+                  src="/projekt2-large.jpg"
+                  alt="pokój"
+                  fill
+                  className={`object-cover transition-filter duration-700 blur-0`}
+                  style={{ objectFit: "cover" }}
+                  unoptimized
+                />
+              )}
             </div>
             <div className="flex justify-between mt-[5px]  w-full-width text-[clamp(12px,3.35vw,1rem)] font-normal-font-weight">
               <span>Our project</span>
@@ -79,24 +96,23 @@ export default function Projects() {
                 src="/projekt4-small.jpg"
                 alt="pokój"
                 fill
-                className={`object-cover transition-opacity duration-700 ${
-                  loaded4 ? "opacity-0" : "opacity-50"
+                className={`object-cover transition-filter duration-700 ${
+                  loaded4 ? "blur-0" : "blur-lg"
                 }`}
                 style={{ objectFit: "cover" }}
                 unoptimized
-                priority
               />
 
-              <Image
-                src="/projekt4-large.jpg"
-                alt="pokój"
-                fill
-                className={`object-cover transition-opacity duration-700 ${
-                  loaded4 ? "opacity-100" : "opacity-0"
-                }`}
-                style={{ objectFit: "cover" }}
-                unoptimized
-              />
+              {loaded4 && (
+                <Image
+                  src="/projekt4-large.jpg"
+                  alt="pokój"
+                  fill
+                  className={`object-cover transition-filter duration-700 blur-0`}
+                  style={{ objectFit: "cover" }}
+                  unoptimized
+                />
+              )}
             </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
               <span>Our project</span>
@@ -111,24 +127,23 @@ export default function Projects() {
                 src="/projekt3-small.jpg"
                 alt="pokój"
                 fill
-                className={`object-cover transition-opacity duration-700 ${
-                  loaded3 ? "opacity-0" : "opacity-50"
+                className={`object-cover transition-filter duration-700 ${
+                  loaded3 ? "blur-0" : "blur-lg"
                 }`}
                 style={{ objectFit: "cover" }}
                 unoptimized
-                priority
               />
 
-              <Image
-                src="/projekt3-large.jpg"
-                alt="pokój"
-                fill
-                className={`object-cover transition-opacity duration-700 ${
-                  loaded3 ? "opacity-100" : "opacity-0"
-                }`}
-                style={{ objectFit: "cover" }}
-                unoptimized
-              />
+              {loaded3 && (
+                <Image
+                  src="/projekt3-large.jpg"
+                  alt="pokój"
+                  fill
+                  className={`object-cover transition-filter duration-700 blur-0`}
+                  style={{ objectFit: "cover" }}
+                  unoptimized
+                />
+              )}
             </div>
             <div className="flex justify-between mt-[5px]  w-full-width text-[clamp(12px,3.35vw,1rem)]">
               <span>Our project</span>
@@ -141,24 +156,23 @@ export default function Projects() {
                 src="/projekt1-small.jpg"
                 alt="pokój"
                 fill
-                className={`object-cover transition-opacity duration-700 ${
-                  loaded ? "opacity-0" : "opacity-50"
+                className={`object-cover transition-filter duration-700 ${
+                  loaded ? "blur-0" : "blur-lg"
                 }`}
                 style={{ objectFit: "cover" }}
                 unoptimized
-                priority
               />
 
-              <Image
-                src="/projekt1-large.jpg"
-                alt="pokój"
-                fill
-                className={`object-cover transition-opacity duration-700 ${
-                  loaded ? "opacity-100" : "opacity-0"
-                }`}
-                style={{ objectFit: "cover" }}
-                unoptimized
-              />
+              {loaded && (
+                <Image
+                  src="/projekt1-large.jpg"
+                  alt="pokój"
+                  fill
+                  className={`object-cover transition-filter duration-700 blur-0`}
+                  style={{ objectFit: "cover" }}
+                  unoptimized
+                />
+              )}
             </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
               <span>Our project</span>
