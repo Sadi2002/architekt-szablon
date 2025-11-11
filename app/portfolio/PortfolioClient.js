@@ -25,27 +25,26 @@ function ProgressiveImage({ smallSrc, largeSrc, alt }) {
 
   return (
     <div className="relative w-full h-full overflow-hidden">
-      {/* Mały obraz – od rau wid */}
+      {/* Mały obraz – tło */}
       <Image
         src={smallSrc}
         alt={alt}
         fill
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-50"
-        unoptimized
-        sizes="100vw"
+        style={{ objectFit: "cover" }} // wymusza cover od startu
+        className="absolute top-0 left-0 w-full h-full opacity-50"
+        priority
       />
 
-      {/* Duży obraz – fade-in nad małym */}
+      {/* Duży obraz – fade-in */}
       <Image
         src={largeSrc}
         alt={alt}
         fill
-        className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity ${
+        style={{ objectFit: "cover" }} // wymusza cover od startu
+        className={`absolute top-0 left-0 w-full h-full transition-opacity duration-700 ${
           loaded ? "opacity-100" : "opacity-0"
         }`}
-        unoptimized
         priority
-        sizes="100vw"
       />
     </div>
   );

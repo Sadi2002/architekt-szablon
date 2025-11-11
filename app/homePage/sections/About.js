@@ -47,7 +47,7 @@ export default function About() {
           src="/about-small.jpg"
           alt="pokój"
           fill
-          className={`object-cover transition-opacity duration-700 ${
+          className={`object-cover transition-opacity ${
             loaded ? "opacity-0" : "opacity-50"
           }`}
           unoptimized
@@ -59,7 +59,7 @@ export default function About() {
           src="/about-large.jpg"
           alt="pokój"
           fill
-          className={`object-cover transition-opacity duration-700 ${
+          className={`object-cover transition-opacity ${
             loaded ? "opacity-100" : "opacity-0"
           }`}
           unoptimized
