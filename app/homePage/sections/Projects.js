@@ -42,7 +42,7 @@ export default function Projects() {
       </h3>
       <div className="flex flex-col lg:flex-row lg:justify-between">
         <div className="flex flex-col lg:w-[calc(50%-10px)]">
-          <div className="max-w-[80%] mb-[50px] lg:mb-[30px] lg:max-w-[100%]">
+          <div className="max-w-[80%] mb-[50px]  lg:max-w-[100%]">
             <div className="relative aspect-8/7 ">
               <Image
                 src="/test3.jpg"
@@ -99,7 +99,7 @@ export default function Projects() {
           </div>
         </div>
         <div className="lg:flex lg:flex-col lg:w-[calc(50%-10px)]">
-          <div className="w-full-width mb-[50px] lg:mb-[30px]">
+          <div className="w-full-width mb-[50px] ">
             <div className="relative aspect-8/5">
               <Image
                 src="/test3.jpg"
