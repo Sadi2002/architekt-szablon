@@ -1,33 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-export default function ImageWithFade({ smallSrc, largeSrc, alt }) {
+export function ProgressiveImage({ smallSrc, largeSrc, alt, className = "" }) {
   const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {
-    const img = new window.Image();
-    img.src = largeSrc;
-    img.onload = () => setLoaded(true);
-  }, [largeSrc]);
-
   return (
-    <div className="relative w-full h-full overflow-hidden">
-      {/* małe zdjęcie */}
+    <div className={`relative overflow-hidden ${className}`}>
+      {/* Mały obrazek — zawsze widoczny */}
       <Image
         src={smallSrc}
         alt={alt}
         fill
         className={`object-cover transition-opacity duration-700 ${
-          loaded ? "opacity-0" : "opacity-50"
+          loaded ? "opacity-0" : "opacity-100"
         }`}
-        style={{ objectFit: "cover" }}
+        style={{ filter: "blur(10px)" }} // opcjonalnie, efekt blur
         unoptimized
-        priority
       />
 
-      {/* duże zdjęcie */}
+      {/* Duży obrazek — fade-in po załadowaniu */}
       <Image
         src={largeSrc}
         alt={alt}
@@ -35,7 +28,7 @@ export default function ImageWithFade({ smallSrc, largeSrc, alt }) {
         className={`object-cover transition-opacity duration-700 ${
           loaded ? "opacity-100" : "opacity-0"
         }`}
-        style={{ objectFit: "cover" }}
+        onLoadingComplete={() => setLoaded(true)}
         unoptimized
       />
     </div>
