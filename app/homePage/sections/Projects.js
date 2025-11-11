@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+
 import ArrowWhite from "../../../public/arrow-right-white.png";
 // import { useMediaQuery } from "usehooks-ts"
 
@@ -8,7 +9,7 @@ import { useState, useEffect } from "react";
 
 export default function Projects() {
   const [src, setSrc] = useState("/test3.jpg");
-  const [loaded, setLoaded] = useState(false);
+
   useEffect(() => {
     // Ładujemy duży obraz dopiero, gdy przeglądarka jest „idle”
     if ("requestIdleCallback" in window) {
@@ -17,7 +18,6 @@ export default function Projects() {
         img.src = "/test2.jpg"; // pełne 4K
         img.onload = () => {
           setSrc("/test2.jpg");
-          setLoaded(true);
         };
       });
     } else {
@@ -46,9 +46,7 @@ export default function Projects() {
               <Image
                 src={src}
                 alt="projekt 1"
-                className={`object-cover transition-opacity duration-500 ${
-                  loaded ? "opacity-100" : "opacity-50"
-                }`}
+                className="object-cover"
                 fill
                 unoptimized
                 priority={false}
@@ -65,9 +63,7 @@ export default function Projects() {
               <Image
                 src={src}
                 alt="projekt 2"
-                className={`object-cover transition-opacity duration-500 ${
-                  loaded ? "opacity-100" : "opacity-50"
-                }`}
+                className="object-cover "
                 fill
                 unoptimized
                 priority={false}
@@ -85,9 +81,7 @@ export default function Projects() {
               <Image
                 src={src}
                 alt="projekt 3"
-                className={`object-cover transition-opacity duration-500 ${
-                  loaded ? "opacity-100" : "opacity-50"
-                }`}
+                className="object-cover"
                 fill
                 unoptimized
                 priority={false}
@@ -103,9 +97,7 @@ export default function Projects() {
               <Image
                 src={src}
                 alt="projekt 5"
-                className={`object-cover transition-opacity duration-500 ${
-                  loaded ? "opacity-100" : "opacity-50"
-                }`}
+                className="object-cover"
                 fill
                 unoptimized
                 priority={false}
