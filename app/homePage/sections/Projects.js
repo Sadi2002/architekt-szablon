@@ -104,7 +104,7 @@ export default function Projects() {
           <div className="w-full-width mb-[50px] lg:mb-[30px]">
             <div className="relative aspect-8/5">
               <Image
-                src="/projekt3-small.jpg"
+                src="/projekt1-small.jpg"
                 alt="pokój"
                 fill
                 className={`object-cover transition-opacity duration-700 ${
@@ -115,7 +115,7 @@ export default function Projects() {
               />
 
               <Image
-                src="/projekt3-large.jpg"
+                src="/projekt1-large.jpg"
                 alt="pokój"
                 fill
                 className={`object-cover transition-opacity duration-700 ${
@@ -132,7 +132,7 @@ export default function Projects() {
           <div className="max-w-[78%] mb-[30px] lg:w-[100%] lg:max-w-[100%] lg:mb-[60px]">
             <div className="relative aspect-7/8 lg:aspect-8/7 ">
               <Image
-                src="/projekt1-small.jpg"
+                src="/projekt3-small.jpg"
                 alt="pokój"
                 fill
                 className={`object-cover transition-opacity duration-700 ${
@@ -143,7 +143,7 @@ export default function Projects() {
               />
 
               <Image
-                src="/projekt1-large.jpg"
+                src="/projekt3-large.jpg"
                 alt="pokój"
                 fill
                 className={`object-cover transition-opacity duration-700 ${
