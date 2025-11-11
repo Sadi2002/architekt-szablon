@@ -40,7 +40,7 @@ function ProgressiveImage({ smallSrc, largeSrc, alt }) {
         src={largeSrc}
         alt={alt}
         fill
-        className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 ${
+        className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity ${
           loaded ? "opacity-100" : "opacity-0"
         }`}
         unoptimized

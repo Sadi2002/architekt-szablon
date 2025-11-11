@@ -48,7 +48,7 @@ export default function Projects() {
                 src="/projekt2-small.jpg"
                 alt="pokój"
                 fill
-                className={`object-cover transition-opacity duration-700 ${
+                className={`object-cover transition-opacity  ${
                   loaded2 ? "opacity-0" : "opacity-50"
                 }`}
                 unoptimized
@@ -59,7 +59,7 @@ export default function Projects() {
                 src="/projekt2-large.jpg"
                 alt="pokój"
                 fill
-                className={`object-cover transition-opacity duration-700 ${
+                className={`object-cover transition-opacity  ${
                   loaded2 ? "opacity-100" : "opacity-0"
                 }`}
                 unoptimized
@@ -77,7 +77,7 @@ export default function Projects() {
                 src="/projekt4-small.jpg"
                 alt="pokój"
                 fill
-                className={`object-cover transition-opacity duration-700 ${
+                className={`object-cover transition-opacity  ${
                   loaded4 ? "opacity-0" : "opacity-50"
                 }`}
                 unoptimized
@@ -88,7 +88,7 @@ export default function Projects() {
                 src="/projekt4-large.jpg"
                 alt="pokój"
                 fill
-                className={`object-cover transition-opacity duration-700 ${
+                className={`object-cover transition-opacity  ${
                   loaded4 ? "opacity-100" : "opacity-0"
                 }`}
                 unoptimized
@@ -107,7 +107,7 @@ export default function Projects() {
                 src="/projekt1-small.jpg"
                 alt="pokój"
                 fill
-                className={`object-cover transition-opacity duration-700 ${
+                className={`object-cover transition-opacity  ${
                   loaded3 ? "opacity-0" : "opacity-50"
                 }`}
                 unoptimized
@@ -118,7 +118,7 @@ export default function Projects() {
                 src="/projekt1-large.jpg"
                 alt="pokój"
                 fill
-                className={`object-cover transition-opacity duration-700 ${
+                className={`object-cover transition-opacity  ${
                   loaded3 ? "opacity-100" : "opacity-0"
                 }`}
                 unoptimized
@@ -135,7 +135,7 @@ export default function Projects() {
                 src="/projekt3-small.jpg"
                 alt="pokój"
                 fill
-                className={`object-cover transition-opacity duration-700 ${
+                className={`object-cover transition-opacity  ${
                   loaded ? "opacity-0" : "opacity-50"
                 }`}
                 unoptimized
@@ -146,7 +146,7 @@ export default function Projects() {
                 src="/projekt3-large.jpg"
                 alt="pokój"
                 fill
-                className={`object-cover transition-opacity duration-700 ${
+                className={`object-cover transition-opacity  ${
                   loaded ? "opacity-100" : "opacity-0"
                 }`}
                 unoptimized
