@@ -49,7 +49,7 @@ export default function Projects() {
                 alt="pokój"
                 fill
                 className={`object-cover transition-opacity duration-700 ${
-                  loaded2 ? "opacity-0" : "opacity-50"
+                  loaded ? "opacity-0" : "opacity-50"
                 }`}
                 unoptimized
                 priority
@@ -60,7 +60,7 @@ export default function Projects() {
                 alt="pokój"
                 fill
                 className={`object-cover transition-opacity duration-700 ${
-                  loaded2 ? "opacity-100" : "opacity-0"
+                  loaded ? "opacity-100" : "opacity-0"
                 }`}
                 unoptimized
               />
@@ -78,7 +78,7 @@ export default function Projects() {
                 alt="pokój"
                 fill
                 className={`object-cover transition-opacity duration-700 ${
-                  loaded4 ? "opacity-0" : "opacity-50"
+                  loaded ? "opacity-0" : "opacity-50"
                 }`}
                 unoptimized
                 priority
@@ -89,7 +89,7 @@ export default function Projects() {
                 alt="pokój"
                 fill
                 className={`object-cover transition-opacity duration-700 ${
-                  loaded4 ? "opacity-100" : "opacity-0"
+                  loaded ? "opacity-100" : "opacity-0"
                 }`}
                 unoptimized
               />
@@ -108,7 +108,7 @@ export default function Projects() {
                 alt="pokój"
                 fill
                 className={`object-cover transition-opacity duration-700 ${
-                  loaded3 ? "opacity-0" : "opacity-50"
+                  loaded ? "opacity-0" : "opacity-50"
                 }`}
                 unoptimized
                 priority
@@ -119,7 +119,7 @@ export default function Projects() {
                 alt="pokój"
                 fill
                 className={`object-cover transition-opacity duration-700 ${
-                  loaded3 ? "opacity-100" : "opacity-0"
+                  loaded ? "opacity-100" : "opacity-0"
                 }`}
                 unoptimized
               />
