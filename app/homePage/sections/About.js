@@ -59,7 +59,7 @@ export default function About() {
             src="/about-large.jpg"
             alt="pokój"
             fill
-            className="object-cover absolute top-0 left-0 transition-opacity duration-700 w-full h-full"
+            className="object-cover absolute top-0 left-0 w-full h-full"
             style={{ opacity: fadeInLarge ? 1 : 0.5 }}
             unoptimized
           />

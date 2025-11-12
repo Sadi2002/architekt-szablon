@@ -19,12 +19,13 @@ export default function Projects() {
       const img = new window.Image();
       img.src = src;
       img.onload = () => {
-        // najpierw ustawiamy loadedImages → duże zdjęcie jest gotowe, ale opacity nadal 0.5
+        // Po załadowaniu dużego zdjęcia ustawiamy opacity startową 0.5
         setLoadedImages((prev) => ({ ...prev, [key]: true }));
-        // po krótkiej chwili animujemy opacity do 1
+
+        // Dajemy chwilę, żeby duże zdjęcie było w DOM i gotowe
         setTimeout(() => {
           setFadeInImages((prev) => ({ ...prev, [key]: true }));
-        }, 300); // 300ms opóźnienia można dopasować
+        }, 50); // 50ms minimalna pauza, żeby obraz był w DOM
       };
     });
   }, []);
@@ -36,8 +37,8 @@ export default function Projects() {
         src={smallSrc}
         alt="pokój"
         fill
-        className="object-cover transition-opacity duration-700 w-full h-full"
-        style={{ opacity: fadeInImages[key] ? 0 : 0.5 }}
+        className="object-cover  w-full h-full duration-500"
+        style={{ opacity: fadeInImages[key] ? 0.5 : 0.5 }}
       />
 
       {/* Duże zdjęcie */}
@@ -46,7 +47,7 @@ export default function Projects() {
           src={largeSrc}
           alt="pokój"
           fill
-          className="object-cover absolute top-0 left-0 w-full h-full transition-opacity duration-700"
+          className="object-cover absolute top-0 left-0 w-full h-full"
           style={{ opacity: fadeInImages[key] ? 1 : 0.5 }}
           unoptimized
         />
