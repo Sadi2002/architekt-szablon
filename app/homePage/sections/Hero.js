@@ -10,9 +10,11 @@ export default function Hero() {
   const [fadeHeavy, setFadeHeavy] = useState(false);
 
   useEffect(() => {
-    // preload ciężkiego obrazu czystym JS
+    // Preload dużego obrazu w tle — nie blokuje renderu
     const img = new window.Image();
     img.src = heroHeavy.src;
+    img.loading = "lazy"; // przeglądarka pobierze w tle
+    img.decoding = "async"; // nie blokuje dekodowania renderu
     img.onload = () => {
       setHeavyLoaded(true);
       requestAnimationFrame(() => setFadeHeavy(true));
@@ -32,15 +34,17 @@ export default function Hero() {
         />
       </div>
 
-      {/* Cień nad obrazami */}
+      {/* Cień */}
       <div className="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.55)] -z-20"></div>
 
-      {/* Ciężki obraz w tle - czysty img */}
+      {/* Ciężki obraz w tle — ładuje się poza renderem */}
       {heavyLoaded && (
         <img
           src={heroHeavy.src}
           alt="pełna jakość"
-          className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 -z-25 ${
+          decoding="async"
+          loading="lazy"
+          className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 will-change-opacity -z-25 ${
             fadeHeavy ? "opacity-100" : "opacity-0"
           }`}
         />
