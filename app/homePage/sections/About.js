@@ -1,6 +1,17 @@
+"use client";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function About() {
+  const [largeImageLoaded, setLargeImageLoaded] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const img = new window.Image();
+      img.src = "/about-large.jpg";
+      img.onload = () => setLargeImageLoaded(true);
+    }
+  }, []);
   return (
     <section className="pt-about-section-padding-top-mobile flex flex-col gap-about-section-gap-mobile xl:gap-about-section-gap-laptop xl:pt-about-section-padding-top-laptop 2xl:gap-about-section-gap-desktop mb-about-section-margin-bottom xl:mb-[150px]">
       <div className="mx-margin-mobile lg:flex md:mx-tablet lg:mx-small-laptop lg:justify-between xl:justify-between 2xl:mx-desktop">
@@ -28,13 +39,26 @@ export default function About() {
           </button>
         </div>
       </div>
-      <div className="relative max-w-about-image-max-width-mobile xl:w-about-image-width-laptop aspect-about-image-aspect-ratio">
+      <div className="relative max-w-about-image-max-width-mobile xl:w-about-image-width-laptop aspect-[3/1.7]">
+        {/* Małe zdjęcie placeholder */}
         <Image
           src="/about-small.jpg"
           alt="pokój"
           fill
-          className={"object-cover"}
+          className="object-cover transition-opacity duration-700 w-full h-full"
+          style={{ opacity: largeImageLoaded ? 0 : 0.5 }} // małe zdjęcie 50% dopóki duże się nie załaduje
         />
+
+        {/* Duże zdjęcie po załadowaniu */}
+        {largeImageLoaded && (
+          <Image
+            src="/about-large.jpg"
+            alt="pokój"
+            fill
+            className="object-cover absolute top-0 left-0 transition-opacity duration-700 opacity-100 w-full h-full"
+            unoptimized
+          />
+        )}
       </div>
     </section>
   );
