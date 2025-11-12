@@ -10,18 +10,18 @@ export default function Hero() {
   const [fadeHeavy, setFadeHeavy] = useState(false);
 
   useEffect(() => {
-    // preload ciężkiego obrazu
+    // preload ciężkiego obrazu czystym JS
     const img = new window.Image();
     img.src = heroHeavy.src;
     img.onload = () => {
       setHeavyLoaded(true);
-      requestAnimationFrame(() => setFadeHeavy(true)); // fade-in
+      requestAnimationFrame(() => setFadeHeavy(true));
     };
   }, []);
 
   return (
     <section className="h-hero-height relative w-full overflow-hidden">
-      {/* Lekki obraz (placeholder) */}
+      {/* Lekki obraz placeholder */}
       <div className="absolute top-0 left-0 w-full h-full -z-30">
         <Image
           src={heroLight}
@@ -33,23 +33,17 @@ export default function Hero() {
       </div>
 
       {/* Cień nad obrazami */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.55)] -z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.55)] -z-20"></div>
 
-      {/* Ciężki obraz ładowany w tle z fade-in */}
+      {/* Ciężki obraz w tle - czysty img */}
       {heavyLoaded && (
-        <div
-          className={`absolute top-0 left-0 w-full h-full -z-20 transition-opacity duration-1000 ${
+        <img
+          src={heroHeavy.src}
+          alt="pełna jakość"
+          className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 -z-25 ${
             fadeHeavy ? "opacity-100" : "opacity-0"
           }`}
-        >
-          <Image
-            src={heroHeavy}
-            fill
-            alt="pełna jakość"
-            className="object-cover w-full h-full"
-            unoptimized
-          />
-        </div>
+        />
       )}
 
       {/* Treść hero */}

@@ -7,15 +7,13 @@ export default function About() {
   const [fadeInLarge, setFadeInLarge] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const img = new window.Image();
-      img.src = "/about-large.jpg";
-      img.onload = () => {
-        setLargeImageLoaded(true);
-        // małe opóźnienie, żeby transition zadziałało
-        requestAnimationFrame(() => setFadeInLarge(true));
-      };
-    }
+    // preload dużego obrazu
+    const img = new window.Image();
+    img.src = "/about-large.jpg";
+    img.onload = () => {
+      setLargeImageLoaded(true);
+      requestAnimationFrame(() => setFadeInLarge(true));
+    };
   }, []);
 
   return (
@@ -49,19 +47,21 @@ export default function About() {
           src="/about-small.jpg"
           alt="pokój"
           fill
-          className="object-cover transition-opacity duration-700 w-full h-full"
-          style={{ opacity: largeImageLoaded ? 0 : 0.5 }}
+          className="object-cover w-full h-full"
+          priority
         />
+
+        {/* Cień */}
+        <div className="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.2)] -z-10"></div>
 
         {/* Duże zdjęcie po załadowaniu */}
         {largeImageLoaded && (
-          <Image
+          <img
             src="/about-large.jpg"
-            alt="pokój"
-            fill
-            className="object-cover absolute top-0 left-0 w-full h-full"
-            style={{ opacity: fadeInLarge ? 1 : 0.5 }}
-            unoptimized
+            alt="pokój pełna jakość"
+            className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              fadeInLarge ? "opacity-100" : "opacity-0"
+            }`}
           />
         )}
       </div>
