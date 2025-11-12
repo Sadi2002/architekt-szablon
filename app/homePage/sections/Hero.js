@@ -1,37 +1,69 @@
+"use client";
 import Image from "next/image";
-import heroImage from "../../../public/main.webp";
+import { useEffect, useState } from "react";
+import heroLight from "../../../public/projekt3-small.jpg";
+import heroHeavy from "../../../public/projekt3-large.jpg";
 import arrow from "../../../public/arrow.png";
 
 export default function Hero() {
+  const [heavyLoaded, setHeavyLoaded] = useState(false);
+  const [fadeHeavy, setFadeHeavy] = useState(false);
+
+  useEffect(() => {
+    // preload ciężkiego obrazu
+    const img = new window.Image();
+    img.src = heroHeavy.src;
+    img.onload = () => {
+      setHeavyLoaded(true);
+      requestAnimationFrame(() => setFadeHeavy(true)); // fade-in
+    };
+  }, []);
+
   return (
-    <section className="h-hero-height relative top-0 left-0 w-full-width">
-      <div>
-        <div className="absolute top-0 left-0 w-full-width h-hero-height bg-[rgba(0,0,0,0.55)] -z-1"></div>
+    <section className="h-hero-height relative w-full overflow-hidden">
+      {/* Lekki obraz (placeholder) */}
+      <div className="absolute top-0 left-0 w-full h-full -z-30">
         <Image
-          src={heroImage}
+          src={heroLight}
           fill
-          alt="nowoczesny dom"
-          className="object-cover -z-10 absolute"
+          alt="lekki obraz"
+          className="object-cover"
           priority
         />
       </div>
-      <div className="mx-margin-mobile flex flex-col h-full-height relative md:mx-tablet lg:mx-small-laptop 2xl:mx-desktop">
-        <div className="absolute bottom-hero-text-position-mobile w-full-width xl:bottom-hero-text-position-desktop">
-          <h1 className="text-main-white text-hero-title-size-mobile leading-hero-title-line-height-mobile font-medium-font-weight mb-hero-title-margin-bottom lg:text-hero-title-size-small-laptop lg:leading-hero-title-line-height-small-laptop xl:text-hero-title-size-laptop xl:font-normal-font-weight xl:leading-hero-title-line-height-laptop uppercase 2xl:leading-hero-title-line-height-desktop 2xl:text-hero-title-size-desktop max-w-hero-title-max-width-mobile lg:max-w-hero-title-max-width-small-laptop xl:max-w-hero-title-max-width-laptop 2xl:max-w-hero-title-max-width-desktop ">
+
+      {/* Cień nad obrazami */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.55)] -z-10"></div>
+
+      {/* Ciężki obraz ładowany w tle z fade-in */}
+      {heavyLoaded && (
+        <div
+          className={`absolute top-0 left-0 w-full h-full -z-20 transition-opacity duration-1000 ${
+            fadeHeavy ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <Image
+            src={heroHeavy}
+            fill
+            alt="pełna jakość"
+            className="object-cover w-full h-full"
+            unoptimized
+          />
+        </div>
+      )}
+
+      {/* Treść hero */}
+      <div className="mx-margin-mobile flex flex-col h-full relative md:mx-tablet lg:mx-small-laptop 2xl:mx-desktop">
+        <div className="absolute bottom-hero-text-position-mobile w-full xl:bottom-hero-text-position-desktop">
+          <h1 className="text-main-white text-hero-title-size-mobile leading-hero-title-line-height-mobile font-medium mb-hero-title-margin-bottom lg:text-hero-title-size-small-laptop lg:leading-hero-title-line-height-small-laptop xl:text-hero-title-size-laptop xl:font-normal-font-weight xl:leading-hero-title-line-height-laptop uppercase 2xl:leading-hero-title-line-height-desktop 2xl:text-hero-title-size-desktop max-w-hero-title-max-width-mobile lg:max-w-hero-title-max-width-small-laptop xl:max-w-hero-title-max-width-laptop 2xl:max-w-hero-title-max-width-desktop">
             OSIEDLE ZACISZE W Warszawie
           </h1>
-          <p
-            className="text-main-white font-light-font-weight mb-hero-text-margin-bottom-mobile text-hero-text-size-mobile
-          leading-hero-text-line-height-mobile max-w-hero-text-max-width-mobile lg:max-w-hero-text-max-width-small-laptop min-[420px]:max-w-[360px] xl:max-w-hero-text-max-width-laptop xl:mb-hero-text-margin-bottom-laptop
-          "
-          >
+          <p className="text-main-white font-light-font-weight mb-hero-text-margin-bottom-mobile text-hero-text-size-mobile leading-hero-text-line-height-mobile max-w-hero-text-max-width-mobile lg:max-w-hero-text-max-width-small-laptop min-[420px]:max-w-[360px] xl:max-w-hero-text-max-width-laptop xl:mb-hero-text-margin-bottom-laptop">
             Oferujemy doświadczenie wyrafinowanego komfortu, ponadczasowej
             elegancji i szczerej gościnności. Położona w romantycznym sercu
             Paryża.
           </p>
-          <button
-            className={`bg-main-white rounded-buttonWithArrow-rounded px-buttonWithArrow-padding-x py-buttonWithArrow-padding-y  text-main-black ml-buttonWithArrow-margin-left-mobile mr-buttonWithArrow-margin-right-mobile font-medium flex items-center md:ml-buttonWithArrow-margin-left-tablet text-hero-text-size-mobile`}
-          >
+          <button className="bg-main-white rounded-buttonWithArrow-rounded px-buttonWithArrow-padding-x py-buttonWithArrow-padding-y text-main-black ml-buttonWithArrow-margin-left-mobile mr-buttonWithArrow-margin-right-mobile font-medium flex items-center md:ml-buttonWithArrow-margin-left-tablet text-hero-text-size-mobile">
             Czytaj więcej
             <Image
               src={arrow}
@@ -41,6 +73,8 @@ export default function Hero() {
           </button>
         </div>
       </div>
+
+      {/* Scroll down */}
       <span className="absolute bottom-hero-scrollDown-position-bottom-mobile left-hero-scrollDown-position-left-mobile mx-margin-mobile font-normal-font-weight text-hero-scrollDown-color text-hero-scrollDown-size-mobile md:mx-tablet md:bottom-hero-scrollDown-position-bottom-tablet md:left-hero-scrollDown-position-left-tablet md:right-hero-scrollDown-position-right-tablet md:text-hero-scrollDown-size-tablet opacity-hero-scrollDown-opacity 2xl:mx-desktop">
         (scroll down)
       </span>
