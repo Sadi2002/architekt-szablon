@@ -13,13 +13,11 @@ export default function Projects() {
           <div className="max-w-[80%] mb-[50px] lg:mb-[30px] lg:max-w-[100%]">
             <div className="relative aspect-8/7">
               <Image
-                src="/projekt2-large.jpg"
+                src="/projekt2-small.webp"
                 alt="pokój"
                 fill
                 className="object-cover absolute top-0 left-0 w-full h-full"
-                unoptimized
                 placeholder="blur"
-                blurDataURL="/projekt2-small.webp"
               />
             </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)] font-normal-font-weight">
@@ -31,13 +29,11 @@ export default function Projects() {
           <div className="w-[86%] flex flex-col items-end self-end mb-[50px] lg:mb-[0px] lg:w-[100%] lg:h-full">
             <div className="flex flex-col justify-end w-full-width relative aspect-5/3 lg:h-full">
               <Image
-                src="/projekt4-large.jpg"
+                src="/projekt4-small.webp"
                 alt="pokój"
                 fill
                 className="object-cover absolute top-0 left-0 w-full h-full"
-                unoptimized
                 placeholder="blur"
-                blurDataURL="/projekt4-small.webp"
               />
             </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
@@ -51,12 +47,11 @@ export default function Projects() {
           <div className="w-full-width mb-[50px] lg:mb-[30px]">
             <div className="relative aspect-8/5">
               <Image
-                src="/projekt3-large.jpg"
+                src="/projekt3-small.webp"
                 alt="pokój"
                 fill
                 className="object-cover absolute top-0 left-0 w-full h-full"
                 placeholder="blur"
-                blurDataURL="/projekt3-small.webp"
               />
             </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
@@ -68,13 +63,11 @@ export default function Projects() {
           <div className="max-w-[78%] mb-[30px] lg:w-[100%] lg:max-w-[100%] lg:mb-[60px]">
             <div className="relative aspect-7/8 lg:aspect-8/7">
               <Image
-                src="/projekt1-large.jpg"
+                src="/projekt1-small.webp"
                 alt="pokój"
                 fill
                 className="object-cover absolute top-0 left-0 w-full h-full"
-                unoptimized
                 placeholder="blur"
-                blurDataURL="/projekt1-small.webp"
               />
             </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">

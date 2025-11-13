@@ -28,13 +28,11 @@ export default function About() {
 
       <div className="relative max-w-about-image-max-width-mobile xl:w-about-image-width-laptop aspect-[3/1.7]">
         <Image
-          src="/about-large.jpg"
+          src="/about-small.webp"
           alt="pokój"
           fill
           className="object-cover absolute top-0 left-0 w-full h-full"
-          unoptimized
           placeholder="blur"
-          blurDataURL="/about-small.webp"
         />
       </div>
     </section>
