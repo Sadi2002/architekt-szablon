@@ -55,9 +55,9 @@ export default function Projects() {
                 alt="pokój"
                 fill
                 className="object-cover absolute top-0 left-0 w-full h-full"
-                unoptimized
                 placeholder="blur"
                 blurDataURL="/projekt3-small.webp"
+                priority
               />
             </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
