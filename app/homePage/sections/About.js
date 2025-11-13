@@ -1,5 +1,5 @@
 import Image from "next/image";
-import aboutLarge from "../../../public/about-large.jpg";
+import aboutLarge from "../../../public/about-large.webp";
 
 export default function About() {
   return (

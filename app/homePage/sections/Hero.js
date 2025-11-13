@@ -1,6 +1,6 @@
 import Image from "next/image";
 import arrow from "../../../public/arrow.png";
-import mainImgLarge from "../../../public/projekt3-large.jpg";
+import mainImgLarge from "../../../public/projekt3-large.webp";
 
 export default function Hero() {
   return (

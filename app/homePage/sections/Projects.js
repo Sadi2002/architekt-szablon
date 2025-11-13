@@ -2,10 +2,10 @@ import Image from "next/image";
 
 import ArrowWhite from "../../../public/arrow-right-white.png";
 
-import project1 from "../../../public/projekt1-large.jpg";
-import project2 from "../../../public/projekt2-large.jpg";
-import project3 from "../../../public/projekt3-large.jpg";
-import project4 from "../../../public/projekt4-large.jpg";
+import project1 from "../../../public/projekt1-large.webp";
+import project2 from "../../../public/projekt2-large.webp";
+import project3 from "../../../public/projekt3-large.webp";
+import project4 from "../../../public/projekt4-large.webp";
 
 export default function Projects() {
   return (
