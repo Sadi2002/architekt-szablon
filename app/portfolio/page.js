@@ -1,8 +1,9 @@
 import PortfolioClient from "./PortfolioClient";
 
 export const metadata = {
-  title: "Portfolio - Sadowski Studio",
-  description: "Zobacz nasze dotychczasowe realizacje i projekty.",
+  title: "Sadowski Studio - Nowoczesna Architektura i Design",
+  description:
+    "Odkryj Sadowski Studio - Twoje źródło nowoczesnej architektury i designu. Tworzymy przestrzenie, które inspirują i zachwycają.",
 };
 
 export default function Portfolio() {
