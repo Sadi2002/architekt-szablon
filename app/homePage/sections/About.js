@@ -31,10 +31,8 @@ export default function About() {
         <Image
           src={aboutLarge}
           alt="pokój"
-          fill
           className="object-cover"
           placeholder="blur"
-          sizes="(min-width:1200px) 1200px, 100vw"
         />
       </div>
     </section>
