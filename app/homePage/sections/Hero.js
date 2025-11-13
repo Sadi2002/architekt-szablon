@@ -1,5 +1,6 @@
 import Image from "next/image";
 import arrow from "../../../public/arrow.png";
+import mainImageSmall from "../../../public/projekt3-small.webp";
 import mainImage from "../../../public/projekt3-large.jpg";
 
 export default function Hero() {
@@ -8,7 +9,7 @@ export default function Hero() {
       <div className="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.55)] -z-20"></div>
 
       <Image
-        src={mainImage}
+        src={mainImageSmall}
         alt="pokój"
         className="object-cover absolute top-0 left-0 w-full h-full -z-25"
         placeholder="blur"
@@ -16,6 +17,13 @@ export default function Hero() {
         priority
       />
 
+      <Image
+        src={mainImage}
+        alt="pokój"
+        className="object-cover absolute top-0 left-0 w-full h-full -z-25"
+        placeholder="blur"
+        blurDataURL="/projekt3-small.webp"
+      />
       <div className="mx-margin-mobile flex flex-col h-full relative md:mx-tablet lg:mx-small-laptop 2xl:mx-desktop">
         <div className="absolute bottom-hero-text-position-mobile w-full xl:bottom-hero-text-position-desktop">
           <h1 className="text-main-white text-hero-title-size-mobile leading-hero-title-line-height-mobile font-medium mb-hero-title-margin-bottom lg:text-hero-title-size-small-laptop lg:leading-hero-title-line-height-small-laptop xl:text-hero-title-size-laptop xl:font-normal-font-weight xl:leading-hero-title-line-height-laptop uppercase 2xl:leading-hero-title-line-height-desktop 2xl:text-hero-title-size-desktop max-w-hero-title-max-width-mobile lg:max-w-hero-title-max-width-small-laptop xl:max-w-hero-title-max-width-laptop 2xl:max-w-hero-title-max-width-desktop">
