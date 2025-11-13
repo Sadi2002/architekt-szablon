@@ -1,41 +1,6 @@
-"use client";
+import Image from "next/image";
 
-import { useEffect, useState } from "react";
 import ArrowWhite from "../../../public/arrow-right-white.png";
-
-const projectList = [
-  { small: "/projekt2-small.webp", large: "/projekt2-large.jpg" },
-  { small: "/projekt4-small.webp", large: "/projekt4-large.jpg" },
-  { small: "/projekt3-small.webp", large: "/projekt3-large.jpg" },
-  { small: "/projekt1-small.webp", large: "/projekt1-large.jpg" },
-];
-
-function ProjectImage({ smallSrc, largeSrc, alt }) {
-  const [loadedLarge, setLoadedLarge] = useState(false);
-
-  useEffect(() => {
-    const loadLarge = () => {
-      const img = new window.Image();
-      img.src = largeSrc;
-      img.onload = () => setLoadedLarge(true);
-    };
-
-    if (document.readyState === "complete") {
-      loadLarge();
-    } else {
-      window.addEventListener("load", loadLarge);
-      return () => window.removeEventListener("load", loadLarge);
-    }
-  }, [largeSrc]);
-
-  return (
-    <img
-      src={loadedLarge ? largeSrc : smallSrc}
-      alt={alt}
-      className="object-cover w-full h-full transition-opacity duration-700"
-    />
-  );
-}
 
 export default function Projects() {
   return (
@@ -45,24 +10,35 @@ export default function Projects() {
       </h3>
       <div className="flex flex-col lg:flex-row lg:justify-between">
         <div className="flex flex-col lg:w-[calc(50%-10px)]">
-          <div className="max-w-[80%] mb-[50px] lg:mb-[30px] lg:max-w-[100%] relative aspect-8/7">
-            <ProjectImage
-              smallSrc={projectList[0].small}
-              largeSrc={projectList[0].large}
-              alt="Projekt 2"
-            />
+          <div className="max-w-[80%] mb-[50px] lg:mb-[30px] lg:max-w-[100%]">
+            <div className="relative aspect-8/7">
+              <Image
+                src="/projekt2-large.jpg"
+                alt="pokój"
+                fill
+                className="object-cover absolute top-0 left-0 w-full h-full"
+                unoptimized
+                placeholder="blur"
+                blurDataURL="/projekt2-small.webp"
+              />
+            </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)] font-normal-font-weight">
               <span>Our project</span>
               <span>View project</span>
             </div>
           </div>
 
-          <div className="w-[86%] flex flex-col items-end self-end mb-[50px] lg:mb-[0px] lg:w-[100%] lg:h-full relative aspect-5/3">
-            <ProjectImage
-              smallSrc={projectList[1].small}
-              largeSrc={projectList[1].large}
-              alt="Projekt 4"
-            />
+          <div className="w-[86%] flex flex-col items-end self-end mb-[50px] lg:mb-[0px] lg:w-[100%] lg:h-full">
+            <div className="flex flex-col justify-end w-full-width relative aspect-5/3 lg:h-full">
+              <Image
+                src="/projekt4-large.jpg"
+                alt="pokój"
+                fill
+                className="object-cover absolute top-0 left-0 w-full h-full"
+                placeholder="blur"
+                blurDataURL="/projekt4-small.webp"
+              />
+            </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
               <span>Our project</span>
               <span>View project</span>
@@ -71,24 +47,35 @@ export default function Projects() {
         </div>
 
         <div className="lg:flex lg:flex-col lg:w-[calc(50%-10px)]">
-          <div className="w-full-width mb-[50px] lg:mb-[30px] relative aspect-8/5">
-            <ProjectImage
-              smallSrc={projectList[2].small}
-              largeSrc={projectList[2].large}
-              alt="Projekt 3"
-            />
+          <div className="w-full-width mb-[50px] lg:mb-[30px]">
+            <div className="relative aspect-8/5">
+              <Image
+                src="/projekt3-large.jpg"
+                alt="pokój"
+                fill
+                className="object-cover absolute top-0 left-0 w-full h-full"
+                placeholder="blur"
+                blurDataURL="/projekt3-small.webp"
+              />
+            </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
               <span>Our project</span>
               <span>View project</span>
             </div>
           </div>
 
-          <div className="max-w-[78%] mb-[30px] lg:w-[100%] lg:max-w-[100%] lg:mb-[60px] relative aspect-7/8 lg:aspect-8/7">
-            <ProjectImage
-              smallSrc={projectList[3].small}
-              largeSrc={projectList[3].large}
-              alt="Projekt 1"
-            />
+          <div className="max-w-[78%] mb-[30px] lg:w-[100%] lg:max-w-[100%] lg:mb-[60px]">
+            <div className="relative aspect-7/8 lg:aspect-8/7">
+              <Image
+                src="/projekt1-large.jpg"
+                alt="pokój"
+                fill
+                className="object-cover absolute top-0 left-0 w-full h-full"
+                unoptimized
+                placeholder="blur"
+                blurDataURL="/projekt1-small.webp"
+              />
+            </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
               <span>Our project</span>
               <span>View project</span>
@@ -102,8 +89,8 @@ export default function Projects() {
             </p>
             <button className="bg-main-black rounded-buttonWithArrow-rounded px-buttonWithArrow-padding-x py-buttonWithArrow-padding-y text-main-white ml-buttonWithArrow-margin-left-mobile mr-buttonWithArrow-margin-right-mobile font-medium flex items-center md:ml-buttonWithArrow-margin-left-tablet text-hero-text-size-mobile">
               Zobacz wszystkie
-              <img
-                src={ArrowWhite.src}
+              <Image
+                src={ArrowWhite}
                 alt="strzałka"
                 className="w-buttonWithArrow-icon-width h-buttonWithArrow-icon-height top-[0.5px] relative"
               />
