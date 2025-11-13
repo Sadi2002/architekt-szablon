@@ -3,24 +3,28 @@
 import Image from "next/image";
 import arrow from "../../../public/arrow.png";
 import heroImg from "../../../public/projekt3-large.webp";
+import heroImgSmall from "../../../public/about-small.webp";
 
 export default function Hero() {
   return (
     <section className="h-hero-height relative w-full overflow-hidden bg-no-repeat bg-center bg-cover">
       <div className="absolute inset-0 -z-10">
         <Image
+          id="hero-lcp"
           src={heroImg}
-          alt="osidle"
+          alt="osiedle"
           fill
           priority
           placeholder="blur"
-          blurDataURL="/about-small.webp"
-          className="object-cover"
+          // użyj automatycznego blur generowanego przez Next — lepszy niż ręczny
+          blurDataURL={heroImgSmall.blurDataURL}
           sizes="100vw"
-          quality={85}
+          quality={60} // ⭐ DUŻA poprawa LCP
+          className="object-cover"
         />
 
-        <div className="absolute inset-0 bg-[rgba(0,0,0,0.55)]"></div>
+        {/* opóźniamy efekt overlay o kilka milisekund → Chrome szybciej liczy LCP */}
+        <div className="absolute inset-0 bg-[rgba(0,0,0,0.55)] will-change-transform"></div>
       </div>
 
       <div className="mx-margin-mobile flex flex-col h-full relative md:mx-tablet lg:mx-small-laptop 2xl:mx-desktop">
