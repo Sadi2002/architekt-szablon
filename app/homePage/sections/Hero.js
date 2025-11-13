@@ -9,10 +9,11 @@ export default function Hero() {
         <Image
           src={heroImg}
           alt="osidle"
-          objectFit="cover"
           priority
           fill
+          sizes="(max-width: 768px) 100vw, 1200px"
           placeholder="blur"
+          blurDataURL="/projekt3-small.webp"
         />
 
         <div className="absolute inset-0 bg-[rgba(0,0,0,0.55)]"></div>
