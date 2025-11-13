@@ -1,6 +1,7 @@
 import Image from "next/image";
 import arrow from "../../../public/arrow.png";
-import mainImg from "../../../public/projekt3-small.webp";
+
+import mainImgSmall from "../../../public/projekt3-small.webp";
 
 export default function Hero() {
   return (
@@ -8,10 +9,9 @@ export default function Hero() {
       <div className="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.55)] -z-20"></div>
 
       <Image
-        src={mainImg}
+        src={mainImgSmall}
         alt="pokój"
         className="object-cover absolute top-0 left-0 w-full h-full -z-25"
-        placeholder="blur"
         priority
       />
 
