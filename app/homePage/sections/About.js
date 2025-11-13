@@ -34,6 +34,7 @@ export default function About() {
           className="object-cover absolute top-0 left-0 w-full h-full"
           placeholder="blur"
           blurDataURL="/about-small.webp"
+          loading="lazy"
         />
       </div>
     </section>
