@@ -12,7 +12,6 @@ export default function Hero() {
           sizes="100vw"
           priority
           className="w-full h-full object-cover"
-          placeholder="blur"
         />
       </div>
       <div className="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.55)] z-10"></div>
