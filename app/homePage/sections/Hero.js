@@ -15,10 +15,11 @@ export default function Hero() {
           fill
           priority
           placeholder="blur"
-          // użyj automatycznego blur generowanego przez Next — lepszy niż ręczny
           blurDataURL="/about-small.webp"
-          sizes="100vw"
-          quality={60} // ⭐ DUŻA poprawa LCP
+          sizes="(max-width: 768px) 100vw,
+         (max-width: 1200px) 100vw,
+         1600px"
+          quality={60}
           className="object-cover"
         />
 
