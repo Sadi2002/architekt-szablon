@@ -31,10 +31,10 @@ export default function About() {
         <Image
           src={aboutLarge}
           alt="pokój"
-          className="object-cover absolute top-0 left-0 w-full h-full"
+          fill
+          className="object-cover"
           placeholder="blur"
-          blurDataURL="/about-small.webp"
-          unoptimized
+          sizes="(min-width:1200px) 1200px, 100vw"
         />
       </div>
     </section>
