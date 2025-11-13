@@ -8,7 +8,6 @@ export default function SingleProject({ src, dataBlur }) {
       className="object-cover absolute top-0 left-0 w-full h-full"
       placeholder="blur"
       blurDataURL={dataBlur}
-      unoptimized
     />
   );
 }
