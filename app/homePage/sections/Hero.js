@@ -11,7 +11,7 @@ export default function Hero() {
 
   return (
     <section className="h-hero-height relative w-full overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.55)] -z-20"></div>
+      {/* <div className="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.55)] -z-20"></div> */}
 
       <Image
         src={loaded ? heroLarge : heroSmall}
