@@ -1,27 +1,22 @@
-"use client";
-
 import Image from "next/image";
 import arrow from "../../../public/arrow.png";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 export default function Hero() {
-  const [largeImageLoaded, setLargeImageLoaded] = useState(false);
+  // const [largeImageLoaded, setLargeImageLoaded] = useState(false);
 
-  useEffect(() => {
-    // Preload duże zdjęcie w tle
-    const img = new window.Image();
-    img.src = "/projekt3-large.jpg";
-    img.onload = () => setLargeImageLoaded(true);
-  }, []);
+  // useEffect(() => {
+  //   // Preload duże zdjęcie w tle
+  //   const img = new window.Image();
+  //   img.src = "/projekt3-large.jpg";
+  //   img.onload = () => setLargeImageLoaded(true);
+  // }, []);
 
   return (
     <section
       className="h-hero-height relative w-full overflow-hidden bg-no-repeat bg-center bg-cover"
       style={{
         backgroundImage: `url(/projekt3-small.webp)`,
-        ...(largeImageLoaded && {
-          backgroundImage: `url(/projekt3-large.jpg)`,
-        }),
       }}
     >
       <div className="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.55)] z-10"></div>
