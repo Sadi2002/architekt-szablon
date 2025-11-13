@@ -13,7 +13,6 @@ export default function Hero() {
         className="object-cover absolute top-0 left-0 w-full h-full -z-25"
         placeholder="blur"
         blurDataURL="/projekt3-small.webp"
-        unoptimized
         priority
       />
 
