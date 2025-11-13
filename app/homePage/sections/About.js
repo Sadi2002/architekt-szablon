@@ -1,4 +1,5 @@
 import Image from "next/image";
+import aboutLarge from "../../../public/about-large.jpg";
 
 export default function About() {
   return (
@@ -28,10 +29,12 @@ export default function About() {
 
       <div className="relative max-w-about-image-max-width-mobile xl:w-about-image-width-laptop aspect-[3/1.7]">
         <Image
-          src="/about-small.webp"
+          src={aboutLarge}
           alt="pokój"
-          fill
           className="object-cover absolute top-0 left-0 w-full h-full"
+          placeholder="blur"
+          blurDataURL="/about-small.webp"
+          unoptimized
         />
       </div>
     </section>
