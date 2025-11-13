@@ -14,7 +14,6 @@ export default function Hero() {
         alt="pokój"
         fill
         className="object-cover absolute top-0 left-0 w-full h-full -z-25"
-        unoptimized
         placeholder="blur"
         blurDataURL="/projekt3-small.jpg"
         priority
