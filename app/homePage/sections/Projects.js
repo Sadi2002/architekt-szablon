@@ -19,7 +19,7 @@ export default function Projects() {
                 className="object-cover absolute top-0 left-0 w-full h-full"
                 unoptimized
                 placeholder="blur"
-                blurDataURL="/projekt2-small.jpg"
+                blurDataURL="/projekt2-small.webp"
               />
             </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)] font-normal-font-weight">
@@ -37,7 +37,7 @@ export default function Projects() {
                 className="object-cover absolute top-0 left-0 w-full h-full"
                 unoptimized
                 placeholder="blur"
-                blurDataURL="/projekt4-small.jpg"
+                blurDataURL="/projekt4-small.webp"
               />
             </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
@@ -57,7 +57,7 @@ export default function Projects() {
                 className="object-cover absolute top-0 left-0 w-full h-full"
                 unoptimized
                 placeholder="blur"
-                blurDataURL="/projekt3-small.jpg"
+                blurDataURL="/projekt3-small.webp"
               />
             </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
@@ -75,7 +75,7 @@ export default function Projects() {
                 className="object-cover absolute top-0 left-0 w-full h-full"
                 unoptimized
                 placeholder="blur"
-                blurDataURL="/projekt1-small.jpg"
+                blurDataURL="/projekt1-small.webp"
               />
             </div>
             <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
