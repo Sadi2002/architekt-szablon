@@ -2,29 +2,21 @@
 
 import Image from "next/image";
 import arrow from "../../../public/arrow.png";
-import heroImg from "../../../public/projekt3-large.webp";
+import heroImg from "../../../public/projekt3-small.webp";
 
 export default function Hero() {
   return (
     <section className="h-hero-height relative w-full overflow-hidden bg-no-repeat bg-center bg-cover">
       <div className="absolute inset-0 -z-10">
         <Image
-          id="hero-lcp"
           src={heroImg}
-          alt="osiedle"
+          alt="osidle"
           fill
           priority
-          placeholder="blur"
-          blurDataURL="/about-small.webp"
-          sizes="(max-width: 768px) 100vw,
-         (max-width: 1200px) 100vw,
-         1600px"
-          quality={60}
           className="object-cover"
         />
 
-        {/* opóźniamy efekt overlay o kilka milisekund → Chrome szybciej liczy LCP */}
-        <div className="absolute inset-0 bg-[rgba(0,0,0,0.55)] will-change-transform"></div>
+        <div className="absolute inset-0 bg-[rgba(0,0,0,0.55)]"></div>
       </div>
 
       <div className="mx-margin-mobile flex flex-col h-full relative md:mx-tablet lg:mx-small-laptop 2xl:mx-desktop">
