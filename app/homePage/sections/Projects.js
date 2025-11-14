@@ -43,7 +43,7 @@ export default function Projects() {
 
           <div className="w-[86%] flex flex-col items-end self-end mb-[50px] lg:mb-[0px] lg:w-[100%] lg:h-full">
             <div className="flex flex-col justify-end w-full-width relative aspect-5/3 lg:h-full">
-              <LazyComponent height="500px">
+              <LazyComponent height="1000px">
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: "url(/projekt4-small.webp)" }}
@@ -70,7 +70,7 @@ export default function Projects() {
         <div className="lg:flex lg:flex-col lg:w-[calc(50%-10px)]">
           <div className="w-full-width mb-[50px] lg:mb-[30px]">
             <div className="relative aspect-8/5">
-              <LazyComponent height="500px">
+              <LazyComponent height="1000px">
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: "url(/projekt3-small.webp)" }}
@@ -95,7 +95,7 @@ export default function Projects() {
 
           <div className="max-w-[78%] mb-[30px] lg:w-[100%] lg:max-w-[100%] lg:mb-[60px]">
             <div className="relative aspect-7/8 lg:aspect-8/7">
-              <LazyComponent height="500px">
+              <LazyComponent height="1000px">
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: "url(/projekt1-small.webp)" }}
@@ -126,7 +126,7 @@ export default function Projects() {
             </p>
             <button className="bg-main-black rounded-buttonWithArrow-rounded px-buttonWithArrow-padding-x py-buttonWithArrow-padding-y text-main-white ml-buttonWithArrow-margin-left-mobile mr-buttonWithArrow-margin-right-mobile font-medium flex items-center md:ml-buttonWithArrow-margin-left-tablet text-hero-text-size-mobile">
               Zobacz wszystkie
-              <LazyComponent height="500px">
+              <LazyComponent height="1000px">
                 <Image
                   src={ArrowWhite}
                   alt="strzałka"
