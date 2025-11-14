@@ -35,8 +35,7 @@ export default function About() {
             alt="pokój"
             fill
             className="object-cover"
-            placeholder="blur"
-            blurDataURL="/about-small.webp"
+            unoptimized
           />
         </LazyComponent>
       </div>
