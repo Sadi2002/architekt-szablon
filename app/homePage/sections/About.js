@@ -28,7 +28,7 @@ export default function About() {
         </div>
       </div>
 
-      <LazyComponent height="500px">
+      <LazyComponent height="200px">
         <div className="relative max-w-about-image-max-width-mobile xl:w-about-image-width-laptop aspect-[3/1.7] bg-[url('/about-small.webp')] bg-center bg-cover">
           <Image
             src={aboutLarge}
