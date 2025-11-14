@@ -1,3 +1,4 @@
+import LazySection from "./components/LazySection";
 import Hero from "./homePage/sections/Hero";
 import dynamic from "next/dynamic";
 
@@ -14,8 +15,12 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <DynamicAbout />
-      <DynamicProjects />
+      <LazySection>
+        <DynamicAbout />
+      </LazySection>
+      <LazySection>
+        <DynamicProjects />
+      </LazySection>
     </>
   );
 }

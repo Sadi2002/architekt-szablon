@@ -14,7 +14,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="h-hero-height relative w-full overflow-hidden bg-center bg-cover bg-[url('/projekt3-small.webp')]">
+    <section className="h-hero-height relative w-full overflow-hidden bg-center bg-cover bg-[url('/projekt3-small.webp')] mb-[20px]">
       {/* Średnia wersja WebP – Next.js optymalizuje */}
 
       {/* Finalna wersja 4K – czysty <img>, aby Next.js nie optymalizował */}
