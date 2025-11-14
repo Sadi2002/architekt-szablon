@@ -18,7 +18,7 @@ export default function About() {
             </p>
             <p className="lg:max-w-about-text-max-width-small-laptop 2xl:max-w-full-width">
               Przestrzeń powinna oddychać światłem i funkcją. Projektując,
-              poszukuję relacji między naturą a strukturą. Perspektywa
+              poszukuję relacji między naturą a strukturą. Perspektywą
               użytkownika prowadzi każdy detal, czyniąc architekturę.
             </p>
           </div>
