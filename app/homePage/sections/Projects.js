@@ -112,7 +112,7 @@ export default function Projects() {
             </p>
             <button className="bg-main-black rounded-buttonWithArrow-rounded px-buttonWithArrow-padding-x py-buttonWithArrow-padding-y text-main-white ml-buttonWithArrow-margin-left-mobile mr-buttonWithArrow-margin-right-mobile font-medium flex items-center md:ml-buttonWithArrow-margin-left-tablet text-hero-text-size-mobile">
               Zobacz wszystkie
-              <LazyComponent height="1000px">
+              <LazyComponent height={500}>
                 <Image
                   src={ArrowWhite}
                   alt="strzałka"
