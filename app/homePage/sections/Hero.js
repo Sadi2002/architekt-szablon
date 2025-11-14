@@ -13,6 +13,7 @@ export default function Hero() {
         className="object-cover"
         placeholder="blur"
         blurDataURL="/projekt3-small.webp"
+        priority
       />
       <div className="absolute inset-0 bg-[rgba(0,0,0,0.55)]"></div>
 
