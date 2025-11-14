@@ -2,8 +2,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import arrow from "../../../public/arrow.png";
-import heroImgSmall from "../../../public/projekt3-small.webp"; // 20 KB
-import heroImgMedium from "../../../public/projekt3-large.webp"; // ~400 KB WebP
 import heroImgLarge from "../../../public/projekt3-large.webp";
 
 export default function Hero() {
