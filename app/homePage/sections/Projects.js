@@ -30,14 +30,14 @@ export default function Projects() {
                 />
               </LazyComponent>
             </div>
-            <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)] font-normal-font-weight">
+            <div className="flex justify-between mt-[5px] w-full text-[clamp(12px,3.35vw,1rem)] font-normal-font-weight">
               <span>Our project</span>
               <span>View project</span>
             </div>
           </div>
 
           <div className="w-[86%] flex flex-col items-end self-end mb-[50px] lg:mb-[0px] lg:w-[100%] lg:h-full">
-            <div className="flex flex-col justify-end w-full-width relative aspect-5/3 lg:h-full">
+            <div className="flex flex-col justify-end w-full relative aspect-5/3 lg:h-full">
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: `url(${projects[1].bgImage})` }}
@@ -52,7 +52,7 @@ export default function Projects() {
                 />
               </LazyComponent>
             </div>
-            <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
+            <div className="flex justify-between mt-[5px] w-full text-[clamp(12px,3.35vw,1rem)]">
               <span>Our project</span>
               <span>View project</span>
             </div>
@@ -60,7 +60,7 @@ export default function Projects() {
         </div>
 
         <div className="lg:flex lg:flex-col lg:w-[calc(50%-10px)]">
-          <div className="w-full-width mb-[50px] lg:mb-[30px]">
+          <div className="w-full mb-[50px] lg:mb-[30px]">
             <div className="relative aspect-8/5">
               <div
                 className="absolute inset-0 bg-cover bg-center"
@@ -76,7 +76,7 @@ export default function Projects() {
                 />
               </LazyComponent>
             </div>
-            <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
+            <div className="flex justify-between mt-[5px] w-full text-[clamp(12px,3.35vw,1rem)]">
               <span>Our project</span>
               <span>View project</span>
             </div>
@@ -99,7 +99,7 @@ export default function Projects() {
               </LazyComponent>
             </div>
 
-            <div className="flex justify-between mt-[5px] w-full-width text-[clamp(12px,3.35vw,1rem)]">
+            <div className="flex justify-between mt-[5px] w-full text-[clamp(12px,3.35vw,1rem)]">
               <span>Our project</span>
               <span>View project</span>
             </div>
