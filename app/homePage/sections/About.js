@@ -4,19 +4,19 @@ import LazyComponent from "@/app/components/lazyComponent";
 
 export default function About() {
   return (
-    <section className="pt-about-section-padding-top-mobile flex flex-col gap-about-section-gap-mobile xl:gap-about-section-gap-laptop xl:pt-about-section-padding-top-laptop 2xl:gap-about-section-gap-desktop mb-about-section-margin-bottom xl:mb-[150px]">
+    <section className="pt-[60px] flex flex-col gap-[40px] xl:gap-[80px] xl:pt-[150px] 2xl:gap-[100px] mb-[80px] xl:mb-[150px]">
       <div className="mx-margin-mobile lg:flex md:mx-tablet lg:mx-small-laptop lg:justify-between xl:justify-between 2xl:mx-desktop">
-        <h2 className="text-about-title-size-mobile leading-about-title-line-height-mobile font-medium mb-about-title-margin-bottom max-w-about-title-max-width-mobile lg:text-about-title-size-laptop lg:leading-about-title-line-height-laptop lg:max-w-about-title-max-width-laptop lg:w-about-title-width-laptop 2xl:max-w-about-title-max-width-desktop xl:font-normal">
+        <h2 className="text-[clamp(1.6rem,7.5vw,2.5rem)] leading-[clamp(2.1rem,7.5vw,2.5rem)] font-medium mb-[30px] max-w-[500px] lg:text-[clamp(2rem,3.5vw,64px)] lg:leading-[clamp(2rem,3.5vw,64px)] lg:max-w-[700px] lg:w-[50%] 2xl:max-w-[850px] xl:font-normal">
           Witamy w Visual Studio Twoje eleganckie
         </h2>
-        <div className="flex flex-col items-end lg:items-start lg:w-about-text-width-laptop">
-          <div className="flex flex-col gap-about-text-box-gap font-light-font-weight mb-about-text-box-margin-bottom items-start text-about-text-box-size leading-[clamp(0.75rem,10vw,1.5rem)] w-full-width">
-            <p className="lg:max-w-about-text-max-width-small-laptop 2xl:max-w-full-width">
+        <div className="flex flex-col items-end lg:items-start lg:w-[50%]">
+          <div className="flex flex-col gap-[16px] font-light-font-weight mb-[40px] items-start text-clamp(12px,3.35vw,1rem) leading-[clamp(0.75rem,10vw,1.5rem)] w-full">
+            <p className="lg:max-w-[900px] 2xl:max-w-full">
               Projektując przestrzeń, poszukuję harmonii między światłem a
               materią. Perfekcja detalu prowadzi do ponadczasowej formy, która
               inspiruje użytkowników.
             </p>
-            <p className="lg:max-w-about-text-max-width-small-laptop 2xl:max-w-full-width">
+            <p className="lg:max-w-[900px] 2xl:max-w-full">
               Przestrzeń powinna oddychać światłem i funkcją. Projektując,
               poszukuję relacji między naturą a strukturą. Perspektywą
               użytkownika prowadzi każdy detal, czyniąc architekturę.
@@ -28,7 +28,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="relative max-w-about-image-max-width-mobile xl:w-about-image-width-laptop aspect-[3/1.7] bg-[url('/about-small.webp')] bg-center bg-cover">
+      <div className="relative max-w-[90%] xl:w-[80%] aspect-[3/1.7] bg-[url('/about-small.webp')] bg-center bg-cover">
         <LazyComponent height={200}>
           <Image
             src={aboutLarge}

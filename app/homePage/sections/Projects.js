@@ -110,13 +110,13 @@ export default function Projects() {
               Oferujemy doświadczenie wyrafinowanego komfortu, ponadczasowej
               elegancji i szczerej gościnności. Położona w romantycznym sercu.
             </p>
-            <button className="bg-main-black rounded-buttonWithArrow-rounded px-buttonWithArrow-padding-x py-buttonWithArrow-padding-y text-main-white ml-buttonWithArrow-margin-left-mobile mr-buttonWithArrow-margin-right-mobile font-medium flex items-center md:ml-buttonWithArrow-margin-left-tablet text-hero-text-size-mobile">
+            <button className="bg-main-black rounded-[500px] px-[clamp(1rem,3.35vw,1.5rem)] py-[clamp(0.5rem,3.35vw,0.7rem)] text-main-white ml-auto mr-0 font-medium flex items-center md:ml-0 text-[clamp(0.75rem,3.35vw,1rem)]">
               Zobacz wszystkie
               <LazyComponent height={500}>
                 <Image
                   src={ArrowWhite}
                   alt="strzałka"
-                  className="w-buttonWithArrow-icon-width h-buttonWithArrow-icon-height top-[0.5px] relative"
+                  className="w-clamp(1.5rem,3.35vw,1.7rem) h-[clamp(1.5rem,3.35vw,1.7rem)] top-[0.5px] relative"
                 />
               </LazyComponent>
             </button>

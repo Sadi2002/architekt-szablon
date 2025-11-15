@@ -30,12 +30,6 @@
   --breakpoint-mid-desktop-about-title: 1500px;
   --breakpoint-desktop-about-title: 1800px;
 
-  /* WYSOKOŚĆ */
-  --height-full-height: 100%;
-
-  /* SZEROKOŚĆ */
-  --width-full-width: 100%;
-
   /* CZCIONKA */
   --font-weight-light-font-weight: 300;
   --font-weight-normal-font-weight: 400;
@@ -45,20 +39,6 @@
   /* =========================================================
     KOMPONENTY GLOBALNE
   ========================================================== */
-
-  /* PRZYCISK ZE STRZAŁKA */
-  --radius-buttonWithArrow-rounded: 500px;
-  --spacing-buttonWithArrow-padding-x: clamp(1rem, 3.35vw, 1.5rem);
-  --spacing-buttonWithArrow-padding-y: clamp(0.5rem, 3.35vw, 0.7rem);
-  --text-buttonWithArrow-text: clamp(0.75rem, 3.35vw, 1rem);
-  --spacing-buttonWithArrow-margin-left-mobile: auto;
-  --spacing-buttonWithArrow-margin-right-mobile: 0;
-  --spacing-buttonWithArrow-margin-left-tablet: 0;
-  --width-buttonWithArrow-icon-width: clamp(1.5rem, 3.35vw, 1.7rem);
-  --height-buttonWithArrow-icon-height: clamp(1.5rem, 3.35vw, 1.7rem);
-
-  /* PRZYCISK BEZ STRZAŁKI */
-  --text-buttonWithoutArrow-text: clamp(0.75rem, 3.5vw, 1rem);
 
   /* =========================================================
     NAWIGACJA
@@ -74,71 +54,6 @@
   --gap-between-navigation-links: 30px;
   --gap-between-navigation-links-xl: 50px;
   --font-links-size-navigation-desktop: 16px;
-
-  /* =========================================================
-     🏠 HOME PAGE
-     Sekcje: HERO, ABOUT, PROEJCTS, HOW WE WORK, BLOG, FAQ
-  ========================================================== */
-
-  /* HERO */
-  --height-hero-height: 100dvh;
-  --spacing-hero-text-position-mobile: 120px;
-  --spacing-hero-text-position-desktop: 120px;
-  --text-hero-title-size-mobile: clamp(2rem, 10vw, 3rem);
-  --leading-hero-title-line-height-mobile: clamp(2.2rem, 10vw, 3rem);
-  --text-hero-title-size-small-laptop: 70px;
-  --leading-hero-title-line-height-small-laptop: 70px;
-  --text-hero-title-size-laptop: 100px;
-  --leading-hero-title-line-height-laptop: 100px;
-  --text-hero-title-size-desktop: 120px;
-  --leading-hero-title-line-height-desktop: 120px;
-  --spacing-hero-title-margin-bottom: 25px;
-  --spacing-hero-title-max-width-mobile: 400px;
-  --spacing-hero-title-max-width-small-laptop: 600px;
-  --spacing-hero-title-max-width-laptop: 900px;
-  --spacing-hero-title-max-width-desktop: 1000px;
-  --spacing-hero-text-margin-bottom-mobile: 50px;
-  --spacing-hero-text-margin-bottom-laptop: 70px;
-  --text-hero-text-size-mobile: clamp(0.75rem, 3.35vw, 1rem);
-  --leading-hero-text-line-height-mobile: clamp(0.75rem, 10vw, 1.5rem);
-  --spacing-hero-text-max-width-mobile: 300px;
-  --spacing-hero-text-max-width-small-laptop: 450px;
-  --spacing-hero-text-max-width-laptop: 740px;
-  --spacing-hero-scrollDown-position-bottom-mobile: 20px;
-  --spacing-hero-scrollDown-position-left-mobile: 0px;
-  --spacing-hero-scrollDown-position-bottom-tablet: 50px;
-  --spacing-hero-scrollDown-position-left-tablet: auto;
-  --spacing-hero-scrollDown-position-right-tablet: 0;
-  --color-hero-scrollDown-color: #c6c6c6;
-  --text-hero-scrollDown-size-mobile: 10px;
-  --text-hero-scrollDown-size-tablet: 14px;
-  --opacity-hero-scrollDown-opacity: 64%;
-
-  /* ABOUT */
-  --spacing-about-section-padding-top-mobile: 60px;
-  --spacing-about-section-padding-top-laptop: 150px;
-  --spacing-about-section-gap-mobile: 40px;
-  --spacing-about-section-gap-laptop: 80px;
-  --spacing-about-section-gap-desktop: 100px;
-  --spacing-about-section-margin-bottom: 80px;
-  --text-about-title-size-mobile: clamp(1.6rem, 7.5vw, 2.5rem);
-  --leading-about-title-line-height-mobile: clamp(2.1rem, 7.5vw, 2.5rem);
-  --spacing-about-title-margin-bottom: 30px;
-  --spacing-about-title-max-width-mobile: 500px;
-  --text-about-title-size-laptop: clamp(2rem, 3.5vw, 64px);
-  --leading-about-title-line-height-laptop: clamp(2rem, 3.5vw, 64px);
-  --spacing-about-title-max-width-laptop: 700px;
-  --width-about-title-width-laptop: 50%;
-  --width-about-text-width-laptop: 50%;
-  --spacing-about-title-max-width-desktop: 850px;
-  --spacing-about-text-box-gap: 16px;
-  --spacing-about-text-box-margin-bottom: 40px;
-  --text-about-text-box-size: clamp(12px, 3.35vw, 1rem);
-  --leading-about-text-box-line-height: clamp(0.75rem, 10vw, 1.5rem);
-  --spacing-about-text-max-width-small-laptop: 900px;
-  --spacing-about-image-max-width-mobile: 90%;
-  --spacing-about-image-width-laptop: 80%;
-  --aspect-about-image-aspect-ratio: 3/1.7;
 }
 
 html {
